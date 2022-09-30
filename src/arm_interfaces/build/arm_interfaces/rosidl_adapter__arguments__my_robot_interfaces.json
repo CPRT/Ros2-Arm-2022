@@ -1,0 +1,6 @@
+{
+  "package_name": "my_robot_interfaces",
+  "non_idl_tuples": [
+    "/home/erik/armnode_ws/src/arm_interfaces:msg/ArmVoltages.msg"
+  ]
+}

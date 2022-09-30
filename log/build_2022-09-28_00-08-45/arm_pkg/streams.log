@@ -1,0 +1,24 @@
+[0.479s] Invoking command in '/home/erik/armnode_ws/src/arm_pkg': PYTHONPATH=/home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/arm_pkg build --build-base /home/erik/armnode_ws/build/arm_pkg/build install --prefix /home/erik/armnode_ws/install/arm_pkg --record /home/erik/armnode_ws/build/arm_pkg/install.log --single-version-externally-managed
+[0.649s] running egg_info
+[0.649s] writing ../../build/arm_pkg/arm_pkg.egg-info/PKG-INFO
+[0.649s] writing dependency_links to ../../build/arm_pkg/arm_pkg.egg-info/dependency_links.txt
+[0.650s] writing entry points to ../../build/arm_pkg/arm_pkg.egg-info/entry_points.txt
+[0.650s] writing requirements to ../../build/arm_pkg/arm_pkg.egg-info/requires.txt
+[0.650s] writing top-level names to ../../build/arm_pkg/arm_pkg.egg-info/top_level.txt
+[0.678s] reading manifest file '../../build/arm_pkg/arm_pkg.egg-info/SOURCES.txt'
+[0.678s] writing manifest file '../../build/arm_pkg/arm_pkg.egg-info/SOURCES.txt'
+[0.678s] running build
+[0.678s] running build_py
+[0.678s] copying arm_pkg/arm_node.py -> /home/erik/armnode_ws/build/arm_pkg/build/lib/arm_pkg
+[0.678s] running install
+[0.679s] running install_lib
+[0.680s] copying /home/erik/armnode_ws/build/arm_pkg/build/lib/arm_pkg/arm_node.py -> /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg
+[0.680s] byte-compiling /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/arm_node.py to arm_node.cpython-38.pyc
+[0.683s] running install_data
+[0.684s] running install_egg_info
+[0.686s] removing '/home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg-0.0.0-py3.8.egg-info' (and everything under it)
+[0.686s] Copying ../../build/arm_pkg/arm_pkg.egg-info to /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg-0.0.0-py3.8.egg-info
+[0.686s] running install_scripts
+[0.700s] Installing arm_node script to /home/erik/armnode_ws/install/arm_pkg/lib/arm_pkg
+[0.701s] writing list of installed files to '/home/erik/armnode_ws/build/arm_pkg/install.log'
+[0.717s] Invoked command in '/home/erik/armnode_ws/src/arm_pkg' returned '0': PYTHONPATH=/home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/arm_pkg build --build-base /home/erik/armnode_ws/build/arm_pkg/build install --prefix /home/erik/armnode_ws/install/arm_pkg --record /home/erik/armnode_ws/build/arm_pkg/install.log --single-version-externally-managed

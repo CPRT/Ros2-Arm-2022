@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from arm_interfaces/msg/ArmVoltages.msg
+// generated code does not contain a copyright notice
+
+
+module arm_interfaces {
+  module msg {
+    struct ArmVoltages {
+      float m0;
+
+      float m1;
+
+      float m2;
+
+      float m3;
+
+      float m4;
+
+      float m5;
+    };
+  };
+};

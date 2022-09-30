@@ -1,0 +1,276 @@
+[0.000000] (-) TimerEvent: {}
+[0.000094] (arm_interfaces) JobQueued: {'identifier': 'arm_interfaces', 'dependencies': OrderedDict()}
+[0.000137] (arm_interfaces) JobStarted: {'identifier': 'arm_interfaces'}
+[0.007735] (arm_interfaces) JobProgress: {'identifier': 'arm_interfaces', 'progress': 'cmake'}
+[0.008029] (arm_interfaces) JobProgress: {'identifier': 'arm_interfaces', 'progress': 'build'}
+[0.008514] (arm_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces', '--', '-j8', '-l8'], 'cwd': '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_CA:en'), ('USER', 'erik'), ('SSH_AGENT_PID', '1621'), ('ROS_PACKAGE_PATH', '/opt/ros/noetic/share'), ('XDG_SESSION_TYPE', 'x11'), ('ROS_ETC_DIR', '/opt/ros/noetic/etc/ros'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/opt/ros/noetic/lib'), ('HOME', '/home/erik'), ('OLDPWD', '/home/erik/armnode_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1440'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_colcon_cd_root', '/home/erik/ros2_install'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'erik'), ('JOURNAL_STREAM', '8:46568'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/opt/ros/noetic/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'erik'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/opt/ros/noetic/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/erik-Inspiron-5406-2n1:@/tmp/.ICE-unix/1661,unix/erik-Inspiron-5406-2n1:/tmp/.ICE-unix/1661'), ('INVOCATION_ID', '0f62e93c023d47d2a7f0f4ba3634009f'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/1bf3035f_e493_4590_b50a_c8fbd0dded64'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_CA.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('ROSLISP_PACKAGE_DIRECTORIES', ''), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.100'), ('ROS_ROOT', '/opt/ros/noetic/share/ros'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://localhost:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages:/opt/ros/noetic/lib/python3/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy:/opt/ros/noetic')]), 'shell': False}
+[0.026358] (arm_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.041064] (arm_interfaces) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.041199] (arm_interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.098884] (-) TimerEvent: {}
+[0.169211] (arm_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)\n'}
+[0.170236] (arm_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.172330] (arm_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[0.198961] (-) TimerEvent: {}
+[0.255534] (arm_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.282142] (arm_interfaces) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") \n'}
+[0.299040] (-) TimerEvent: {}
+[0.355413] (arm_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)\n'}
+[0.399147] (-) TimerEvent: {}
+[0.413557] (arm_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.417849] (arm_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.433123] (arm_interfaces) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") \n'}
+[0.433383] (arm_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)\n'}
+[0.446922] (arm_interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.447030] (arm_interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8\n'}
+[0.447078] (arm_interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so\n'}
+[0.458210] (arm_interfaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.476668] (arm_interfaces) StdoutLine: {'line': b'-- Generating done\n'}
+[0.478451] (arm_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces\n'}
+[0.494362] (arm_interfaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[0.494536] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__cpp\x1b[0m\n'}
+[0.499247] (-) TimerEvent: {}
+[0.501835] (arm_interfaces) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[0.599342] (-) TimerEvent: {}
+[0.699608] (-) TimerEvent: {}
+[0.790058] (arm_interfaces) StdoutLine: {'line': b'[  5%] Built target arm_interfaces__cpp\n'}
+[0.802360] (-) TimerEvent: {}
+[0.809855] (arm_interfaces) StdoutLine: {'line': b'[  7%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[0.818726] (arm_interfaces) StdoutLine: {'line': b'[ 10%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[0.819068] (arm_interfaces) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[0.832174] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__rosidl_generator_c\x1b[0m\n'}
+[0.846519] (arm_interfaces) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/arm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/arm_interfaces/msg/detail/live_tune__functions.c.o\x1b[0m\n'}
+[0.846779] (arm_interfaces) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/arm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/arm_interfaces/msg/detail/six_floats__functions.c.o\x1b[0m\n'}
+[0.902607] (-) TimerEvent: {}
+[0.903508] (arm_interfaces) StdoutLine: {'line': b'[ 20%] \x1b[32m\x1b[1mLinking C shared library libarm_interfaces__rosidl_generator_c.so\x1b[0m\n'}
+[0.949344] (arm_interfaces) StdoutLine: {'line': b'[ 20%] Built target arm_interfaces__rosidl_generator_c\n'}
+[0.964466] (arm_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[0.964747] (arm_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.002712] (-) TimerEvent: {}
+[1.103030] (-) TimerEvent: {}
+[1.147390] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_cpp\x1b[0m\n'}
+[1.163576] (arm_interfaces) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interfaces/msg/six_floats__type_support.cpp.o\x1b[0m\n'}
+[1.165011] (arm_interfaces) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interfaces/msg/live_tune__type_support.cpp.o\x1b[0m\n'}
+[1.202617] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[1.203099] (-) TimerEvent: {}
+[1.229582] (arm_interfaces) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interfaces/msg/detail/dds_fastrtps/live_tune__type_support.cpp.o\x1b[0m\n'}
+[1.229974] (arm_interfaces) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interfaces/msg/detail/dds_fastrtps/six_floats__type_support.cpp.o\x1b[0m\n'}
+[1.244036] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[1.263860] (arm_interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interfaces/msg/detail/live_tune__type_support.cpp.o\x1b[0m\n'}
+[1.286856] (arm_interfaces) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interfaces/msg/detail/six_floats__type_support.cpp.o\x1b[0m\n'}
+[1.303214] (-) TimerEvent: {}
+[1.406915] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_c\x1b[0m\n'}
+[1.407171] (-) TimerEvent: {}
+[1.438879] (arm_interfaces) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interfaces/msg/six_floats__type_support.cpp.o\x1b[0m\n'}
+[1.501706] (arm_interfaces) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interfaces/msg/live_tune__type_support.cpp.o\x1b[0m\n'}
+[1.507864] (-) TimerEvent: {}
+[1.566234] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[1.607984] (-) TimerEvent: {}
+[1.610021] (arm_interfaces) StdoutLine: {'line': b'[ 48%] \x1b[32m\x1b[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[1.617925] (arm_interfaces) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding C object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interfaces/msg/detail/six_floats__type_support.c.o\x1b[0m\n'}
+[1.638059] (arm_interfaces) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding C object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interfaces/msg/detail/live_tune__type_support.c.o\x1b[0m\n'}
+[1.684567] (arm_interfaces) StdoutLine: {'line': b'[ 53%] Built target arm_interfaces__rosidl_typesupport_c\n'}
+[1.708105] (-) TimerEvent: {}
+[1.733758] (arm_interfaces) StdoutLine: {'line': b'[ 58%] \x1b[32m\x1b[1mLinking C shared library libarm_interfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[1.734731] (arm_interfaces) StdoutLine: {'line': b'[ 58%] \x1b[32m\x1b[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[1.779304] (arm_interfaces) StdoutLine: {'line': b'[ 58%] Built target arm_interfaces__rosidl_typesupport_introspection_c\n'}
+[1.802228] (arm_interfaces) StdoutLine: {'line': b'[ 58%] Built target arm_interfaces__rosidl_typesupport_cpp\n'}
+[1.808220] (-) TimerEvent: {}
+[1.865755] (arm_interfaces) StdoutLine: {'line': b'[ 61%] \x1b[32m\x1b[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[1.908349] (-) TimerEvent: {}
+[1.935773] (arm_interfaces) StdoutLine: {'line': b'[ 61%] Built target arm_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[2.008475] (-) TimerEvent: {}
+[2.033852] (arm_interfaces) StdoutLine: {'line': b'[ 64%] \x1b[32m\x1b[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[2.108579] (-) TimerEvent: {}
+[2.117138] (arm_interfaces) StdoutLine: {'line': b'[ 64%] Built target arm_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[2.126238] (arm_interfaces) StdoutLine: {'line': b'[ 66%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.208688] (-) TimerEvent: {}
+[2.309022] (-) TimerEvent: {}
+[2.363241] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[2.377097] (arm_interfaces) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interfaces/msg/detail/six_floats__type_support_c.cpp.o\x1b[0m\n'}
+[2.378106] (arm_interfaces) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interfaces/msg/detail/live_tune__type_support_c.cpp.o\x1b[0m\n'}
+[2.409160] (-) TimerEvent: {}
+[2.509803] (-) TimerEvent: {}
+[2.610193] (-) TimerEvent: {}
+[2.710622] (-) TimerEvent: {}
+[2.782929] (arm_interfaces) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[2.810744] (-) TimerEvent: {}
+[2.843936] (arm_interfaces) StdoutLine: {'line': b'[ 74%] Built target arm_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[2.858098] (arm_interfaces) StdoutLine: {'line': b'[ 74%] Built target arm_interfaces\n'}
+[2.864930] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__py\x1b[0m\n'}
+[2.872424] (arm_interfaces) StdoutLine: {'line': b'[ 76%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[2.910845] (-) TimerEvent: {}
+[3.011086] (-) TimerEvent: {}
+[3.111405] (-) TimerEvent: {}
+[3.211682] (-) TimerEvent: {}
+[3.230948] (arm_interfaces) StdoutLine: {'line': b'[ 76%] Built target arm_interfaces__py\n'}
+[3.239234] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__python\x1b[0m\n'}
+[3.252455] (arm_interfaces) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/arm_interfaces__python.dir/rosidl_generator_py/arm_interfaces/msg/_six_floats_s.c.o\x1b[0m\n'}
+[3.252622] (arm_interfaces) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/arm_interfaces__python.dir/rosidl_generator_py/arm_interfaces/msg/_live_tune_s.c.o\x1b[0m\n'}
+[3.311797] (-) TimerEvent: {}
+[3.327303] (arm_interfaces) StdoutLine: {'line': b'[ 84%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/arm_interfaces/libarm_interfaces__python.so\x1b[0m\n'}
+[3.355671] (arm_interfaces) StdoutLine: {'line': b'[ 84%] Built target arm_interfaces__python\n'}
+[3.364940] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[3.365248] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[3.365376] (arm_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[3.380156] (arm_interfaces) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/arm_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[3.380418] (arm_interfaces) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[3.380517] (arm_interfaces) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[3.411914] (-) TimerEvent: {}
+[3.453967] (arm_interfaces) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/arm_interfaces/arm_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[3.454326] (arm_interfaces) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/arm_interfaces/arm_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[3.454471] (arm_interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library rosidl_generator_py/arm_interfaces/arm_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[3.483162] (arm_interfaces) StdoutLine: {'line': b'[100%] Built target arm_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[3.483437] (arm_interfaces) StdoutLine: {'line': b'[100%] Built target arm_interfaces__rosidl_typesupport_c__pyext\n'}
+[3.504934] (arm_interfaces) StdoutLine: {'line': b'[100%] Built target arm_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[3.512012] (-) TimerEvent: {}
+[3.513171] (arm_interfaces) CommandEnded: {'returncode': 0}
+[3.556020] (arm_interfaces) JobProgress: {'identifier': 'arm_interfaces', 'progress': 'install'}
+[3.564780] (arm_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces'], 'cwd': '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_CA:en'), ('USER', 'erik'), ('SSH_AGENT_PID', '1621'), ('ROS_PACKAGE_PATH', '/opt/ros/noetic/share'), ('XDG_SESSION_TYPE', 'x11'), ('ROS_ETC_DIR', '/opt/ros/noetic/etc/ros'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/opt/ros/noetic/lib'), ('HOME', '/home/erik'), ('OLDPWD', '/home/erik/armnode_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1440'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_colcon_cd_root', '/home/erik/ros2_install'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'erik'), ('JOURNAL_STREAM', '8:46568'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/opt/ros/noetic/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'erik'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/opt/ros/noetic/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/erik-Inspiron-5406-2n1:@/tmp/.ICE-unix/1661,unix/erik-Inspiron-5406-2n1:/tmp/.ICE-unix/1661'), ('INVOCATION_ID', '0f62e93c023d47d2a7f0f4ba3634009f'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/1bf3035f_e493_4590_b50a_c8fbd0dded64'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_CA.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('ROSLISP_PACKAGE_DIRECTORIES', ''), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.100'), ('ROS_ROOT', '/opt/ros/noetic/share/ros'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://localhost:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages:/opt/ros/noetic/lib/python3/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy:/opt/ros/noetic')]), 'shell': False}
+[3.572850] (arm_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.573177] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/ament_index/resource_index/rosidl_interfaces/arm_interfaces\n'}
+[3.573441] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces\n'}
+[3.573589] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg\n'}
+[3.573706] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail\n'}
+[3.573834] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__functions.c\n'}
+[3.573954] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__type_support.h\n'}
+[3.574154] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__struct.h\n'}
+[3.574320] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__functions.h\n'}
+[3.574499] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__functions.h\n'}
+[3.574675] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__struct.h\n'}
+[3.574896] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__functions.h\n'}
+[3.575009] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__functions.c\n'}
+[3.575118] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__struct.h\n'}
+[3.575228] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__type_support.h\n'}
+[3.575336] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__type_support.h\n'}
+[3.575441] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__functions.c\n'}
+[3.575560] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/live_tune.h\n'}
+[3.575719] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/six_floats.h\n'}
+[3.575843] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/arm_voltages.h\n'}
+[3.575968] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[3.576098] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/library_path.sh\n'}
+[3.576193] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/library_path.dsv\n'}
+[3.576267] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_generator_c.so\n'}
+[3.576433] (arm_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_generator_c.so" to ""\n'}
+[3.576534] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces\n'}
+[3.576654] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg\n'}
+[3.576739] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail\n'}
+[3.576832] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__rosidl_typesupport_fastrtps_c.h\n'}
+[3.576922] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__rosidl_typesupport_fastrtps_c.h\n'}
+[3.577016] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__rosidl_typesupport_fastrtps_c.h\n'}
+[3.577116] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[3.577207] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[3.577467] (arm_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[3.577582] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces\n'}
+[3.577717] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg\n'}
+[3.577825] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail\n'}
+[3.577940] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/dds_fastrtps\n'}
+[3.578050] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.578146] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.578258] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.578357] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[3.578447] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[3.578661] (arm_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[3.578797] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces\n'}
+[3.578931] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg\n'}
+[3.579054] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail\n'}
+[3.579173] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__type_support.c\n'}
+[3.579306] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__type_support.c\n'}
+[3.579422] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__rosidl_typesupport_introspection_c.h\n'}
+[3.579516] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__type_support.c\n'}
+[3.579614] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__rosidl_typesupport_introspection_c.h\n'}
+[3.579730] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__rosidl_typesupport_introspection_c.h\n'}
+[3.579826] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[3.579917] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[3.580091] (arm_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[3.580262] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_c.so\n'}
+[3.580513] (arm_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[3.580624] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces\n'}
+[3.580739] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg\n'}
+[3.580837] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail\n'}
+[3.580946] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__struct.hpp\n'}
+[3.581053] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__traits.hpp\n'}
+[3.581158] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__traits.hpp\n'}
+[3.581271] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__builder.hpp\n'}
+[3.581379] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__struct.hpp\n'}
+[3.581485] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__struct.hpp\n'}
+[3.581587] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__builder.hpp\n'}
+[3.581709] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__builder.hpp\n'}
+[3.581830] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__traits.hpp\n'}
+[3.581947] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/six_floats.hpp\n'}
+[3.582073] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/live_tune.hpp\n'}
+[3.582191] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/arm_voltages.hpp\n'}
+[3.582287] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces\n'}
+[3.582384] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg\n'}
+[3.582482] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail\n'}
+[3.582599] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__type_support.cpp\n'}
+[3.582718] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.582819] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__type_support.cpp\n'}
+[3.582914] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.583026] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.583123] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__type_support.cpp\n'}
+[3.583205] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[3.583304] (arm_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[3.583385] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_cpp.so\n'}
+[3.583586] (arm_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[3.583723] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/pythonpath.sh\n'}
+[3.583817] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/pythonpath.dsv\n'}
+[3.583924] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/__init__.py\n'}
+[3.607029] (arm_interfaces) StdoutLine: {'line': b"Compiling '/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/__init__.py'...\n"}
+[3.610091] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg\n'}
+[3.610247] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_six_floats_s.c\n'}
+[3.610388] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_arm_voltages.py\n'}
+[3.610497] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_live_tune.py\n'}
+[3.610590] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/__init__.py\n'}
+[3.610678] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_six_floats.py\n'}
+[3.610778] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_live_tune_s.c\n'}
+[3.610844] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_arm_voltages_s.c\n'}
+[3.611079] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\n'}
+[3.611542] (arm_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[3.611873] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\n'}
+[3.612072] (-) TimerEvent: {}
+[3.612356] (arm_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[3.612669] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\n'}
+[3.613068] (arm_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[3.613247] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__python.so\n'}
+[3.613514] (arm_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__python.so" to ""\n'}
+[3.613637] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/msg/SixFloats.idl\n'}
+[3.613745] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/msg/LiveTune.idl\n'}
+[3.613856] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/msg/SixFloats.msg\n'}
+[3.613955] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/msg/LiveTune.msg\n'}
+[3.614052] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/ament_index/resource_index/package_run_dependencies/arm_interfaces\n'}
+[3.614165] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/ament_index/resource_index/parent_prefix_path/arm_interfaces\n'}
+[3.614264] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/ament_prefix_path.sh\n'}
+[3.614362] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/ament_prefix_path.dsv\n'}
+[3.614460] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/path.sh\n'}
+[3.614560] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/path.dsv\n'}
+[3.614674] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/local_setup.bash\n'}
+[3.614779] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/local_setup.sh\n'}
+[3.614885] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/local_setup.zsh\n'}
+[3.614963] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/local_setup.dsv\n'}
+[3.615055] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/package.dsv\n'}
+[3.615132] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/ament_index/resource_index/packages/arm_interfaces\n'}
+[3.615245] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_generator_cExport.cmake\n'}
+[3.615338] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[3.615514] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[3.615641] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[3.615848] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[3.615975] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[3.616181] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_generator_cppExport.cmake\n'}
+[3.616359] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[3.616484] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[3.616690] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[3.616803] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[3.617368] (arm_interfaces) StdoutLine: {'line': b'-- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[3.617537] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[3.617639] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[3.617731] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[3.617809] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[3.617891] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[3.617967] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[3.618041] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfacesConfig.cmake\n'}
+[3.618148] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfacesConfig-version.cmake\n'}
+[3.618263] (arm_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/package.xml\n'}
+[3.619870] (arm_interfaces) CommandEnded: {'returncode': 0}
+[3.694441] (arm_interfaces) JobEnded: {'identifier': 'arm_interfaces', 'rc': 0}
+[3.695027] (-) EventReactorShutdown: {}

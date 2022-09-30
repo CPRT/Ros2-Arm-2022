@@ -1,0 +1,7 @@
+{
+  "package_name": "arm_interfaces",
+  "non_idl_tuples": [
+    "/home/erik/armnode_ws/src/arm_interfaces:msg/SixFloats.msg",
+    "/home/erik/armnode_ws/src/arm_interfaces:msg/LiveTune.msg"
+  ]
+}

@@ -1,0 +1,51 @@
+[0.457s] Invoking command in '/home/erik/armnode_ws/src/arm_pkg': PYTHONPATH=/home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/arm_pkg build --build-base /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build install --prefix /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg --record /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/install.log --single-version-externally-managed
+[0.675s] running egg_info
+[0.675s] creating build/arm_pkg/arm_pkg.egg-info
+[0.675s] writing build/arm_pkg/arm_pkg.egg-info/PKG-INFO
+[0.676s] writing dependency_links to build/arm_pkg/arm_pkg.egg-info/dependency_links.txt
+[0.676s] writing entry points to build/arm_pkg/arm_pkg.egg-info/entry_points.txt
+[0.676s] writing requirements to build/arm_pkg/arm_pkg.egg-info/requires.txt
+[0.676s] writing top-level names to build/arm_pkg/arm_pkg.egg-info/top_level.txt
+[0.680s] writing manifest file 'build/arm_pkg/arm_pkg.egg-info/SOURCES.txt'
+[0.729s] reading manifest file 'build/arm_pkg/arm_pkg.egg-info/SOURCES.txt'
+[0.729s] writing manifest file 'build/arm_pkg/arm_pkg.egg-info/SOURCES.txt'
+[0.729s] running build
+[0.729s] running build_py
+[0.730s] creating /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build
+[0.730s] creating /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib
+[0.730s] creating /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg
+[0.730s] copying arm_pkg/GravityCompensation.py -> /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg
+[0.730s] copying arm_pkg/ArmKinematics.py -> /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg
+[0.730s] copying arm_pkg/roboclaw_driver.py -> /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg
+[0.730s] copying arm_pkg/PidController.py -> /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg
+[0.730s] copying arm_pkg/__init__.py -> /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg
+[0.730s] copying arm_pkg/arm_node.py -> /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg
+[0.730s] running install
+[0.731s] running install_lib
+[0.732s] creating /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg
+[0.732s] copying /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg/GravityCompensation.py -> /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg
+[0.732s] copying /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg/ArmKinematics.py -> /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg
+[0.732s] copying /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg/roboclaw_driver.py -> /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg
+[0.732s] copying /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg/PidController.py -> /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg
+[0.732s] copying /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg/__init__.py -> /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg
+[0.732s] copying /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build/lib/arm_pkg/arm_node.py -> /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg
+[0.732s] byte-compiling /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/GravityCompensation.py to GravityCompensation.cpython-38.pyc
+[0.734s] byte-compiling /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/ArmKinematics.py to ArmKinematics.cpython-38.pyc
+[0.735s] byte-compiling /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/roboclaw_driver.py to roboclaw_driver.cpython-38.pyc
+[0.740s] byte-compiling /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/PidController.py to PidController.cpython-38.pyc
+[0.740s] byte-compiling /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/__init__.py to __init__.cpython-38.pyc
+[0.740s] byte-compiling /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/arm_node.py to arm_node.cpython-38.pyc
+[0.744s] running install_data
+[0.745s] creating /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/share/ament_index
+[0.745s] creating /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/share/ament_index/resource_index
+[0.745s] creating /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/share/ament_index/resource_index/packages
+[0.745s] copying resource/arm_pkg -> /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/share/ament_index/resource_index/packages
+[0.745s] copying package.xml -> /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/share/arm_pkg
+[0.745s] creating /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/share/arm_pkg/launch
+[0.745s] copying launch/arm.launch.py -> /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/share/arm_pkg/launch
+[0.745s] running install_egg_info
+[0.747s] Copying build/arm_pkg/arm_pkg.egg-info to /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages/arm_pkg-0.0.0-py3.8.egg-info
+[0.748s] running install_scripts
+[0.771s] Installing arm_node script to /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/arm_pkg
+[0.772s] writing list of installed files to '/home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/install.log'
+[0.799s] Invoked command in '/home/erik/armnode_ws/src/arm_pkg' returned '0': PYTHONPATH=/home/erik/armnode_ws/src/arm_pkg/install/arm_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/arm_pkg build --build-base /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/build install --prefix /home/erik/armnode_ws/src/arm_pkg/install/arm_pkg --record /home/erik/armnode_ws/src/arm_pkg/build/arm_pkg/install.log --single-version-externally-managed

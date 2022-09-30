@@ -1,0 +1,232 @@
+[0.010s] Invoking command in '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces': CMAKE_PREFIX_PATH=/opt/ros/foxy:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces -- -j8 -l8
+[0.026s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.041s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.041s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.169s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[0.170s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.172s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.255s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.282s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[0.355s] -- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)
+[0.413s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.418s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.433s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") 
+[0.433s] -- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)
+[0.447s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.447s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+[0.447s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+[0.458s] -- Configuring done
+[0.476s] -- Generating done
+[0.478s] -- Build files have been written to: /home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces
+[0.494s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[0.494s] [35m[1mScanning dependencies of target arm_interfaces__cpp[0m
+[0.502s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[0.790s] [  5%] Built target arm_interfaces__cpp
+[0.810s] [  7%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[0.819s] [ 10%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[0.819s] [ 12%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[0.832s] [35m[1mScanning dependencies of target arm_interfaces__rosidl_generator_c[0m
+[0.846s] [ 17%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/arm_interfaces/msg/detail/live_tune__functions.c.o[0m
+[0.847s] [ 17%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/arm_interfaces/msg/detail/six_floats__functions.c.o[0m
+[0.903s] [ 20%] [32m[1mLinking C shared library libarm_interfaces__rosidl_generator_c.so[0m
+[0.949s] [ 20%] Built target arm_interfaces__rosidl_generator_c
+[0.964s] [ 25%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[0.965s] [ 25%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.147s] [35m[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_cpp[0m
+[1.163s] [ 28%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interfaces/msg/six_floats__type_support.cpp.o[0m
+[1.165s] [ 30%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interfaces/msg/live_tune__type_support.cpp.o[0m
+[1.203s] [35m[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_fastrtps_cpp[0m
+[1.229s] [ 33%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interfaces/msg/detail/dds_fastrtps/live_tune__type_support.cpp.o[0m
+[1.230s] [ 35%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interfaces/msg/detail/dds_fastrtps/six_floats__type_support.cpp.o[0m
+[1.244s] [35m[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_introspection_cpp[0m
+[1.264s] [ 38%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interfaces/msg/detail/live_tune__type_support.cpp.o[0m
+[1.287s] [ 41%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interfaces/msg/detail/six_floats__type_support.cpp.o[0m
+[1.407s] [35m[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_c[0m
+[1.439s] [ 43%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interfaces/msg/six_floats__type_support.cpp.o[0m
+[1.502s] [ 46%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interfaces/msg/live_tune__type_support.cpp.o[0m
+[1.566s] [35m[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_introspection_c[0m
+[1.610s] [ 48%] [32m[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_c.so[0m
+[1.618s] [ 51%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interfaces/msg/detail/six_floats__type_support.c.o[0m
+[1.638s] [ 53%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interfaces/msg/detail/live_tune__type_support.c.o[0m
+[1.684s] [ 53%] Built target arm_interfaces__rosidl_typesupport_c
+[1.734s] [ 58%] [32m[1mLinking C shared library libarm_interfaces__rosidl_typesupport_introspection_c.so[0m
+[1.735s] [ 58%] [32m[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_cpp.so[0m
+[1.779s] [ 58%] Built target arm_interfaces__rosidl_typesupport_introspection_c
+[1.802s] [ 58%] Built target arm_interfaces__rosidl_typesupport_cpp
+[1.866s] [ 61%] [32m[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[1.936s] [ 61%] Built target arm_interfaces__rosidl_typesupport_introspection_cpp
+[2.034s] [ 64%] [32m[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.117s] [ 64%] Built target arm_interfaces__rosidl_typesupport_fastrtps_cpp
+[2.126s] [ 66%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.363s] [35m[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_fastrtps_c[0m
+[2.377s] [ 69%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interfaces/msg/detail/six_floats__type_support_c.cpp.o[0m
+[2.378s] [ 71%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interfaces/msg/detail/live_tune__type_support_c.cpp.o[0m
+[2.783s] [ 74%] [32m[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[2.844s] [ 74%] Built target arm_interfaces__rosidl_typesupport_fastrtps_c
+[2.858s] [ 74%] Built target arm_interfaces
+[2.865s] [35m[1mScanning dependencies of target arm_interfaces__py[0m
+[2.872s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.231s] [ 76%] Built target arm_interfaces__py
+[3.239s] [35m[1mScanning dependencies of target arm_interfaces__python[0m
+[3.252s] [ 82%] [32mBuilding C object CMakeFiles/arm_interfaces__python.dir/rosidl_generator_py/arm_interfaces/msg/_six_floats_s.c.o[0m
+[3.252s] [ 82%] [32mBuilding C object CMakeFiles/arm_interfaces__python.dir/rosidl_generator_py/arm_interfaces/msg/_live_tune_s.c.o[0m
+[3.327s] [ 84%] [32m[1mLinking C shared library rosidl_generator_py/arm_interfaces/libarm_interfaces__python.so[0m
+[3.355s] [ 84%] Built target arm_interfaces__python
+[3.365s] [35m[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_c__pyext[0m
+[3.365s] [35m[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_introspection_c__pyext[0m
+[3.365s] [35m[1mScanning dependencies of target arm_interfaces__rosidl_typesupport_fastrtps_c__pyext[0m
+[3.380s] [ 87%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[3.380s] [ 89%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[3.380s] [ 92%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[3.454s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/arm_interfaces/arm_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[3.454s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/arm_interfaces/arm_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[3.454s] [100%] [32m[1mLinking CXX shared library rosidl_generator_py/arm_interfaces/arm_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[3.483s] [100%] Built target arm_interfaces__rosidl_typesupport_introspection_c__pyext
+[3.483s] [100%] Built target arm_interfaces__rosidl_typesupport_c__pyext
+[3.505s] [100%] Built target arm_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[3.513s] Invoked command in '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces -- -j8 -l8
+[3.566s] Invoking command in '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces': CMAKE_PREFIX_PATH=/opt/ros/foxy:${CMAKE_PREFIX_PATH} /usr/bin/cmake --install /home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces
+[3.573s] -- Install configuration: ""
+[3.573s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/ament_index/resource_index/rosidl_interfaces/arm_interfaces
+[3.573s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces
+[3.573s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg
+[3.574s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail
+[3.574s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__functions.c
+[3.574s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__type_support.h
+[3.574s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__struct.h
+[3.574s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__functions.h
+[3.574s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__functions.h
+[3.575s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__struct.h
+[3.575s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__functions.h
+[3.575s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__functions.c
+[3.575s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__struct.h
+[3.575s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__type_support.h
+[3.575s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__type_support.h
+[3.575s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__functions.c
+[3.575s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/live_tune.h
+[3.576s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/six_floats.h
+[3.576s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/arm_voltages.h
+[3.576s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/rosidl_generator_c__visibility_control.h
+[3.576s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/library_path.sh
+[3.576s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/library_path.dsv
+[3.576s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_generator_c.so
+[3.576s] -- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_generator_c.so" to ""
+[3.576s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces
+[3.576s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg
+[3.577s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail
+[3.577s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__rosidl_typesupport_fastrtps_c.h
+[3.577s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__rosidl_typesupport_fastrtps_c.h
+[3.577s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__rosidl_typesupport_fastrtps_c.h
+[3.577s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.577s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_c.so
+[3.577s] -- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[3.577s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces
+[3.577s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg
+[3.578s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail
+[3.578s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/dds_fastrtps
+[3.578s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__rosidl_typesupport_fastrtps_cpp.hpp
+[3.578s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__rosidl_typesupport_fastrtps_cpp.hpp
+[3.578s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__rosidl_typesupport_fastrtps_cpp.hpp
+[3.578s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.578s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[3.578s] -- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[3.579s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces
+[3.579s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg
+[3.579s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail
+[3.579s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__type_support.c
+[3.579s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__type_support.c
+[3.579s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__rosidl_typesupport_introspection_c.h
+[3.579s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__type_support.c
+[3.579s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__rosidl_typesupport_introspection_c.h
+[3.580s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__rosidl_typesupport_introspection_c.h
+[3.580s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.580s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_c.so
+[3.580s] -- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[3.580s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_c.so
+[3.580s] -- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_c.so" to ""
+[3.580s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces
+[3.581s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg
+[3.581s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail
+[3.581s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__struct.hpp
+[3.581s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__traits.hpp
+[3.581s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__traits.hpp
+[3.581s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__builder.hpp
+[3.581s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__struct.hpp
+[3.581s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__struct.hpp
+[3.581s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__builder.hpp
+[3.582s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__builder.hpp
+[3.582s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__traits.hpp
+[3.582s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/six_floats.hpp
+[3.582s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/live_tune.hpp
+[3.582s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/arm_voltages.hpp
+[3.582s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces
+[3.582s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg
+[3.582s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail
+[3.582s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__type_support.cpp
+[3.583s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__rosidl_typesupport_introspection_cpp.hpp
+[3.583s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/six_floats__type_support.cpp
+[3.583s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/arm_voltages__rosidl_typesupport_introspection_cpp.hpp
+[3.583s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__rosidl_typesupport_introspection_cpp.hpp
+[3.583s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/include/arm_interfaces/msg/detail/live_tune__type_support.cpp
+[3.583s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_cpp.so
+[3.583s] -- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[3.583s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_cpp.so
+[3.583s] -- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_cpp.so" to ""
+[3.584s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/pythonpath.sh
+[3.584s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/pythonpath.dsv
+[3.584s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/__init__.py
+[3.607s] Compiling '/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/__init__.py'...
+[3.610s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg
+[3.610s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_six_floats_s.c
+[3.610s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_arm_voltages.py
+[3.610s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_live_tune.py
+[3.610s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/__init__.py
+[3.610s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_six_floats.py
+[3.611s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_live_tune_s.c
+[3.611s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/msg/_arm_voltages_s.c
+[3.611s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[3.611s] -- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""
+[3.612s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[3.612s] -- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""
+[3.612s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[3.613s] -- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/python3.8/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""
+[3.613s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__python.so
+[3.613s] -- Set runtime path of "/home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/lib/libarm_interfaces__python.so" to ""
+[3.613s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/msg/SixFloats.idl
+[3.614s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/msg/LiveTune.idl
+[3.614s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/msg/SixFloats.msg
+[3.614s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/msg/LiveTune.msg
+[3.614s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/ament_index/resource_index/package_run_dependencies/arm_interfaces
+[3.614s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/ament_index/resource_index/parent_prefix_path/arm_interfaces
+[3.614s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/ament_prefix_path.sh
+[3.614s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/ament_prefix_path.dsv
+[3.614s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/path.sh
+[3.614s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/environment/path.dsv
+[3.614s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/local_setup.bash
+[3.615s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/local_setup.sh
+[3.615s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/local_setup.zsh
+[3.615s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/local_setup.dsv
+[3.615s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/package.dsv
+[3.615s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/ament_index/resource_index/packages/arm_interfaces
+[3.615s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_generator_cExport.cmake
+[3.615s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_generator_cExport-noconfig.cmake
+[3.615s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[3.615s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.616s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cExport.cmake
+[3.616s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[3.616s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_generator_cppExport.cmake
+[3.616s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[3.616s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.616s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cppExport.cmake
+[3.617s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[3.617s] -- Installing: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/rosidl_cmake-extras.cmake
+[3.617s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.617s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[3.617s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[3.618s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.618s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.618s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.618s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfacesConfig.cmake
+[3.618s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfacesConfig-version.cmake
+[3.618s] -- Up-to-date: /home/erik/armnode_ws/src/arm_interfaces/install/arm_interfaces/share/arm_interfaces/package.xml
+[3.620s] Invoked command in '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy:${CMAKE_PREFIX_PATH} /usr/bin/cmake --install /home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces

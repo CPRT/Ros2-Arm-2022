@@ -1,0 +1,2 @@
+Invoking command in '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces': CMAKE_PREFIX_PATH=/opt/ros/foxy:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces -- -j8 -l8
+Invoked command in '/home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/erik/armnode_ws/src/arm_interfaces/build/arm_interfaces -- -j8 -l8
