@@ -1,4 +1,3 @@
-from distutils.log import error
 import rclpy
 from rclpy.node import Node
 
@@ -15,7 +14,7 @@ from .PidController import PidController
 from .ArmKinematics import inverseKinematics
 from .GravityCompensation import gravityCompensation
 
-from example_interfaces.msg import Int8, Float32
+from example_interfaces.msg import Int8
 
 class ArmNode(Node):
     def __init__(self):
@@ -56,30 +55,32 @@ class ArmNode(Node):
         self.loopCalculatePID = False
         self.isHoming = False
         self.enableVoltageMode = False
-        self.HOME_SETPOINT_MOTORANGLES_RAD = self.declare_parameter("home_rad").value
+        self.HOME_SETPOINT_MOTORANGLES_RAD = self.declare_parameter("arm_home_rad").value
         
         self.setpointMotorAngles = self.HOME_SETPOINT_MOTORANGLES_RAD
         self.REACHED_SETPOINT_TOLERANCE_RAD = 0.05236
         self.massOnEndEffector = 0
 
-        # Tunable constants of PID
-        invert_motor = self.declare_parameter("invert_motor", [False, False, False, False, False, False]).value
-        pid_kP = self.declare_parameter("pid_kP", [0,0,0,0,0,0]).value
-        pid_kI = self.declare_parameter("pid_kI", [0,0,0,0,0,0]).value
-        pid_kD = self.declare_parameter("pid_kD", [0,0,0,0,0,0]).value
-        pid_kF = self.declare_parameter("pid_kF", [0,0,0,0,0,0]).value
-        pid_kIZone = self.declare_parameter("pid_kIZone", [0,0,0,0,0,0]).value
-        max_output = self.declare_parameter("max_output", [0,0,0,0,0,0]).value
+       
+        default_pids = [ 
+            PidController(False, 0, 0, 0, 0, 0, 0, 12),
+            PidController(False, 0, 0, 0, 0, 0, 0, 12),
+            PidController(False, 0, 0, 0, 0, 0, 0, 12),
+            PidController(False, 0, 0, 0, 0, 0, 0, 12),
+            PidController(False, 0, 0, 0, 0, 0, 0, 12),
+            PidController(False, 0, 0, 0, 0, 0, 0, 12),
+           ]
 
-        self.pidControllers = []
-        for i in range(0,5+1):
-            self.pidControllers.append(PidController(invert_motor[i], pid_kP[i], pid_kI[i], pid_kD[i], pid_kF[i], pid_kIZone[i], max_output[i]))     
+         # Tunable constants of PID, should be live tunable
+        self.pidControllers = self.declare_parameter("pidcontrollers", default_pids).value
 
         softLimitLow = self.declare_parameter("soft_limit_low", [0,0,0,0,0,0]).value
         softLimitHigh = self.declare_parameter("soft_limit_high", [0,0,0,0,0,0]).value
 
-        for i in range(0,5+1):
-            self.pidControllers[i].setSoftLimits(softLimitLow[i], softLimitHigh[i])
+        i = 0
+        for controller in self.pidControllers:
+            controller[i].setSoftLimits(softLimitLow[i], softLimitHigh[i])
+            i += 1
 
         self.gearReduction = self.declare_parameter("gear_reduction", [1,1,1,1,1,1]).value
 
@@ -102,7 +103,7 @@ class ArmNode(Node):
 
         # self.timeSinceCommandRecieved = rospy.get_rostime()   #rospy.Time.now()
 
-        self.get_logger().info("Connecting to roboclaws")
+        self.get_logger().info("ArmNode: Connecting to roboclaws")
 
         dev_name = self.declare_parameter("~dev", "/dev/ttyACM0").value
         baud_rate = int(self.declare_parameter("~baud", "19200").value)
@@ -111,34 +112,28 @@ class ArmNode(Node):
 
         self.roboclaw = Roboclaw(dev_name, baud_rate)
 
-
         try:
-            
-            errorCode = self.roboclaw.Open()
-            self.get_logger().info("Connected to roboclaws")
-
+            print("success=-------------------------")
+            self.roboclaw.Open()
         except Exception as e:
-
-            self.get_logger().fatal("Could not connect to Roboclaw")
+            print("success=--==========================")
+            self.get_logger().fatal("ArmNode: Could not connect to Roboclaw")
             self.get_logger().debug(e)
             rclpy.shutdown()
 
-        if (errorCode == 0):
-            self.get_logger().fatal("Could not connect to Roboclaw")
-            rclpy.shutdown()
 
         versions = []
         for address in self.addresses:
             try:
                 versions.append(self.roboclaw.ReadVersion(address))
             except Exception as e:
-                self.get_logger().warn("Problem getting roboclaw version for " + f"[{address}]")
+                self.get_logger().warn("ArmNode: Problem getting roboclaw version for " + f"[{address}]")
                 self.get_logger().debug(e)
                 pass
 
         for version in versions:
             if not version[0]:
-                self.get_logger().warn("Problem getting roboclaw version for " + f"[{address}]")
+                self.get_logger().warn("ArmNode: Problem getting roboclaw version for " + f"[{address}]")
             else:
                 self.get_logger().debug("ArmCode: " + repr(version[1]))
 
@@ -164,18 +159,18 @@ class ArmNode(Node):
         self.encoder_raw_publisher = self.create_publisher(
             SixFloats, "armEncodersRaw", 10)
 
-        # TODO: This needs forward kinematics equations but that's lower priority
+        # TODO: This needs forward kinematics equations which is lower priority
         # self.pose_publisher = self.create_publisher(
         #     PUTMSGHERE, "armPose", 10)
 
         # Setup timers
-        # self.mainLoopTimer = self.create_timer(
-        #     self.declare_parameter("loop_execute_interval", 0.02).value, self.runMainLoop)
+        self.mainLoopTimer = self.create_timer(
+            self.declare_parameter("loop_execute_interval", 0.02).value, self.runMainLoop)
 
-       
-        # self.create_rate(1).sleep()  # This sleep thing caused problems
 
         # Give some info after roboclaw has initialized
+        self.create_rate(1).sleep()
+
         self.get_logger().debug("ArmCode: dev %s" % dev_name)
         self.get_logger().debug("ArmCode: baud %d" % baud_rate)
 
@@ -185,39 +180,6 @@ class ArmNode(Node):
 
         self.get_logger().debug("ArmCode: addresses %s" % str(",".join(strAddress)))
 
-
-        # msg_test = Pose()
-        # msg_test.position.x = 0.3
-        # msg_test.position.y = 0.0
-        # msg_test.position.z = 0.0
-        # msg_test.orientation.x = 0.0
-        # msg_test.orientation.y = 0.0
-        # msg_test.orientation.z = 0.0
-        # msg_test.orientation.w = 0.0
-        # self.cmd_arm_callback(msg_test)
-
-        # msg_test2 = Int8()
-        # msg_test2.data = 0
-        # self.arm_state_callback(msg_test2)
-
-        # msg_test3 = Float32()
-        # msg_test3.data = 0.01
-        # self.additionalMassOnEndEffector_callback(msg_test3)
-
-        # msg_test4 = SixFloats()
-        # msg_test4.m0 = 0.0
-        # msg_test4.m1 = 0.0
-        # msg_test4.m2 = 0.0
-        # msg_test4.m3 = 0.0
-        # msg_test4.m4 = 0.0
-        # msg_test4.m5 = 0.0
-        # self.cmd_setVoltage_callback(msg_test4)
-
-        # msg_test5 = LiveTune()
-        # msg_test5.arm_motor_number = 0
-        # msg_test5.command = "v"
-        # msg_test5.value = 0.0
-        # self.callback_liveTune(msg_test5)
 
     # Subscriber to change the state of the arm. 
     # state should be an int
@@ -257,8 +219,8 @@ class ArmNode(Node):
                 i += 1
 
     # Change the addiitonal mass that is on the End Effector
-    def additionalMassOnEndEffector_callback(self, mass: Float32):
-        self.massOnEndEffector = mass.data
+    def additionalMassOnEndEffector_callback(self, mass):
+        self.massOnEndEffector = mass
 
     # This updates the heartbeat monitor so it knows it has received a command recently
     def feedMonitor(self):
@@ -276,8 +238,8 @@ class ArmNode(Node):
             try:
                 errorCode = self.roboclaw.ReadError(address)[1]
             except OSError as e:
-                self.get_logger().warn("" + f"[{address}] roboclaw.ReadError OSError: {e.errno}")
-                self.get_logger().debug("" + str(e))
+                self.get_logger().warn("ArmNode: " + f"[{address}] Diagnostics OSError: {e.errno}")
+                self.get_logger().debug("ArmNode: " + str(e))
 
             state, message = self.ERRORS[errorCode]
             # statusMessage.summary(state, f"[{address}] {message}")
@@ -285,17 +247,17 @@ class ArmNode(Node):
             # Store info about the voltage input to the roboclaw and board temperature 1 and 2
             try:
                 # MainBatteryVoltage/10 to get volts
-                mainBatteryVoltage = float(self.roboclaw.ReadMainBatteryVoltage(address)[1] / 10) # EDGECASE: mainBatteryVoltage None
+                mainBatteryVoltage = float(self.roboclaw.ReadMainBatteryVoltage(address)[1] / 10)
 
                 statusMessage.add("Main Batt V:", mainBatteryVoltage)
                 statusMessage.add("Logic Batt V:", float(self.roboclaw.ReadLogicBatteryVoltage(address)[1] / 10))
                 statusMessage.add("Temp1 C:", float(self.roboclaw.ReadTemp(address)[1] / 10))
                 statusMessage.add("Temp2 C:", float(self.roboclaw.ReadTemp2(address)[1] / 10))
             except OSError as e:
-                self.get_logger().warn("" + f"[{address}] roboclaw.ReadMainBatteryVoltage OSError: {e.errno}")
-                self.get_logger().debug("" + str(e))
+                self.get_logger().warn("ArmNode: " + f"[{address}] Diagnostics OSError: {e.errno}")
+                self.get_logger().debug("ArmNode: " + str(e))
 
-            # TODO: Make statusMessage avaiable to read somewhere
+            # TODO: Make statusMessage avaiable to read someher
 
 
         ##
@@ -303,63 +265,46 @@ class ArmNode(Node):
         ##
 
         ## Measure encoders and publish
-        encoderRadians = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        encoderRaw = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        encoderRadians = [0, 0, 0, 0, 0, 0]
+        encoderRaw = [0, 0, 0, 0, 0, 0]
 
-        # i = 0
-        # for address in self.addresses:
+        i = 0
+        for address in self.addresses:
 
-        ##
-        ## Store all encoder positions
-        ##
-        try:
-            encoderCount1 = float(self.roboclaw.ReadEncM1(address)[1]) * self.invertEncoderDirection[i]
-        except OSError as e:
-            self.get_logger().warn("" + f"[{address}] ReadEncM1 OSError: {e.errno}") # EDGECASE: encoderCount1 None
-            self.get_logger().debug("" + str(e))
-            self.stopMotors
-            return # EDGECASE_HANDLED_TEMP
+            ##
+            ## Store all encoder positions
+            ##
+            try:
+                encoderCount1 = float(self.roboclaw.ReadEncM1(address)[1]) * self.invertEncoderDirection[i]
+            except OSError as e:
+                self.get_logger().warn("ArmNode: " + f"[{address}] ReadEncM1 OSError: {e.errno}")
+                self.get_logger().debug("ArmNode: " + str(e))
+            
+            try:
+                encoderCount2 = float(self.roboclaw.ReadEncM2(address)[1]) * self.invertEncoderDirection[i+1]
+            except OSError as e:
+                self.get_logger().warn("ArmNode: " + f"[{address}] ReadEncM2 OSError: {e.errno}")
+                self.get_logger().debug("ArmNode: " + str(e))
+
+            encoderRadians1 = encoderCount1 / self.encoderTicksPerRotation[i] * 2*pi / self.gearReduction[i]
+            encoderRadians2 = encoderCount2 / self.encoderTicksPerRotation[i+1] * 2*pi / self.gearReduction[i+1]
+
+            encoderRadians1 = encoderRadians1 + self.encoderOffset[i]
+            encoderRadians2 = encoderRadians2 + self.encoderOffset[i+1]
+
+            encoderRadians[i] = encoderRadians1
+            encoderRadians[i+1] = encoderRadians2
+
+            encoderRaw[i] = encoderCount1
+            encoderRaw[i+1] = encoderCount2
+
+            i += 2
         
-        try:
-            encoderCount2 = float(self.roboclaw.ReadEncM2(address)[1]) * self.invertEncoderDirection[i+1]
-        except OSError as e:
-            self.get_logger().warn("" + f"[{address}] ReadEncM2 OSError: {e.errno}") # EDGECASE: encoderCount2 None
-            self.get_logger().debug("" + str(e))
-            self.stopMotors
-            return # EDGECASE_HANDLED_TEMP
 
-        encoderRadians1 = encoderCount1 / self.encoderTicksPerRotation[i] * 2*pi / self.gearReduction[i]
-        encoderRadians2 = encoderCount2 / self.encoderTicksPerRotation[i+1] * 2*pi / self.gearReduction[i+1]
 
-        encoderRadians1 = encoderRadians1 + self.encoderOffset[i]
-        encoderRadians2 = encoderRadians2 + self.encoderOffset[i+1]
 
-        encoderRadians[i] = encoderRadians1
-        encoderRadians[i+1] = encoderRadians2
-
-        encoderRaw[i] = encoderCount1
-        encoderRaw[i+1] = encoderCount2
-
-        i += 2
-        
-        encoderRadiansMsg = SixFloats()
-        encoderRadiansMsg.m0 = encoderRadians[0]
-        encoderRadiansMsg.m1 = encoderRadians[1]
-        encoderRadiansMsg.m2 = encoderRadians[2]
-        encoderRadiansMsg.m3 = encoderRadians[3]
-        encoderRadiansMsg.m4 = encoderRadians[4]
-        encoderRadiansMsg.m5 = encoderRadians[5]
-
-        encoderRawMsg = SixFloats()
-        encoderRawMsg.m0 = encoderRaw[0]
-        encoderRawMsg.m1 = encoderRaw[1]
-        encoderRawMsg.m2 = encoderRaw[2]
-        encoderRawMsg.m3 = encoderRaw[3]
-        encoderRawMsg.m4 = encoderRaw[4]
-        encoderRawMsg.m5 = encoderRaw[5]
-
-        self.angles_publisher.publish(encoderRadiansMsg)
-        self.encoder_raw_publisher.publish(encoderRawMsg)
+        self.angles_publisher.publish(SixFloats(encoderRadians[0], encoderRadians[1], encoderRadians[2], encoderRadians[3], encoderRadians[4], encoderRadians[5]))
+        self.encoder_raw_publisher.publish(SixFloats(encoderRaw[0], encoderRaw[1], encoderRaw[2], encoderRaw[3], encoderRaw[4], encoderRaw[5]))
 
 
         # TODO: Calculate forward kinematics and publish
@@ -373,7 +318,7 @@ class ArmNode(Node):
         if (self.isHoming): 
             if (self.reachedSetpoint(self.HOME_SETPOINT_MOTORANGLES_RAD, encoderRadians)):
                 self.arm_state_callback(0)
-                return 
+                return
 
         ##
         ## PID calculation
@@ -395,33 +340,31 @@ class ArmNode(Node):
             # Calculate gravity compensation
             gravityCompVolts = gravityCompensation(motorAngles, self.massOnEndEffector, self.gravityCompNewtonMetersToVoltage)
             
-            i = 0
             for address in self.addresses:
 
                 # Calculate grav comp and PID for motor 1
                 setpoint1 = motorAngles[i]
-                feedback1 = encoderRadians1 #EDGECASE: encoderRadians1 is None
+                feedback1 = encoderRadians1
                 voltage1 = self.pidControllers[i].calculate(setpoint1, feedback1, gravityCompVolts[i])
 
                 # Calculate grav comp and PID for motor 2
                 setpoint2 = motorAngles[i+1]
-                feedback2 = encoderRadians2 #EDGECASE: encoderRadians2 is None
+                feedback2 = encoderRadians2
                 voltage2 = self.pidControllers[i+1].calculate(setpoint2, feedback2, gravityCompVolts[i+1])
 
                 # 32767 is 100% duty cycle (15 bytes)
-                dutyCycle1 = voltage1 / mainBatteryVoltage * 32767 #EDGECASE: mainBatteryVoltage is None
-                dutyCycle2 = voltage2 / mainBatteryVoltage * 32767 #EDGECASE: mainBatteryVoltage is None
+                dutyCycle1 = voltage1 / mainBatteryVoltage * 32767
+                dutyCycle2 = voltage2 / mainBatteryVoltage * 32767
 
                 # Send the command to the roboclaw
                 try:
                     self.roboclaw.DutyM1M2(address, dutyCycle1, dutyCycle2)
-
-                    # Feed so the heartbeat monitor knows it got a pulse 
-                    self.feedMonitor()
                 except OSError as e:
-                    self.get_logger().warn("" + f"[{address}] DutyM1M2 OSError: {e.errno}")
-                    self.get_logger().debug("" + str(e))
+                    self.get_logger().warn("ArmNode: " + f"[{address}] DutyM1M2 OSError: {e.errno}")
+                    self.get_logger().debug("ArmNode: " + e)
 
+                # Feed so the heartbeat monitor knows it got a pulse 
+                self.feedMonitor()
 
                 # Iterate the loop
                 i += 2
@@ -436,11 +379,10 @@ class ArmNode(Node):
 
             try:
                 # MainBatteryVoltage/10 to get volts
-                mainBatteryVoltage = self.roboclaw.ReadMainBatteryVoltage(address)[1] / 10 # EDGECASE: mainBatteryVoltage
+                mainBatteryVoltage = self.roboclaw.ReadMainBatteryVoltage(address)[1] / 10
             except OSError as e:
-                self.get_logger().warn("" + f"[{address}] roboclaw.ReadMainBatteryVoltage OSError: {e.errno}")
-                self.get_logger().debug(str(e))
-                return # EDGECASE_HANDLED_TEMP
+                self.get_logger().warn("ArmNode: " + f"[{address}] Diagnostics OSError: {e.errno}")
+                self.get_logger().debug(e)
 
             # 32767 is 100% duty cycle (15 bytes)
             dutyCycle1 = voltages[i] / mainBatteryVoltage * 32767
@@ -450,8 +392,8 @@ class ArmNode(Node):
             try:
                 self.roboclaw.DutyM1M2(address, dutyCycle1, dutyCycle2)
             except OSError as e:
-                self.get_logger().warn("" + f"[{address}] DutyM1M2 OSError: {e.errno}")
-                self.get_logger().debug("" + str(e))
+                self.get_logger().warn("ArmNode: " + f"[{address}] DutyM1M2 OSError: {e.errno}")
+                self.get_logger().debug("ArmNode: " + e)
 
             # Feed so the heartbeat monitor knows it got a pulse 
             self.feedMonitor()
@@ -463,7 +405,7 @@ class ArmNode(Node):
         #P, I, D, IZone, InvertOutput, InvertEncoder, EncoderOffset -> for a specific motor (address and M1 or M2)
         """ LiveTune message
         
-        int arm_motor_number   (0 to 5)
+        int armMotorNumber   (0 to 5)
         string command
         float value
 
@@ -486,64 +428,55 @@ class ArmNode(Node):
         message.command = message.command.lower()
 
         if (message.command == "s" or message.command == "e" or message.command == ""):
-            self.stopMotors()
+            self.stopMotors
 
         elif (message.command == "p"):
-            self.pidControllers[message.arm_motor_number].setP = message.value
+            self.pidControllers[message.armMotorNumber].setP = message.value
         elif (message.command == "i"):
-            self.pidControllers[message.arm_motor_number].setI = message.value
+            self.pidControllers[message.armMotorNumber].setI = message.value
         elif (message.command == "d"):
-            self.pidControllers[message.arm_motor_number].setD = message.value
+            self.pidControllers[message.armMotorNumber].setD = message.value
         elif (message.command == "iZ"):
-            self.pidControllers[message.arm_motor_number].setIZone = message.value
+            self.pidControllers[message.armMotorNumber].setIZone = message.value
 
         elif (message.command == "mI"):
-            self.pidControllers[message.arm_motor_number].setInvertOutput = message.value
+            self.pidControllers[message.armMotorNumber].setInvertOutput = message.value
         elif(message.command == "eI"):
-            self.invertEncoderDirection[message.arm_motor_number] = int(message.value)
+            self.invertEncoderDirection[message.armMotorNumber] = int(message.value)
         elif(message.command == "eO"):
-            self.encoderOffset[message.arm_motor_number] = message.value
+            self.encoderOffset[message.armMotorNumber] = message.value
         elif(message.command == "eT"):
-            self.encoderTicksPerRotation[message.arm_motor_number] = message.value
+            self.encoderTicksPerRotation[message.armMotorNumber] = message.value
         
         elif (message.command == "sH"):
-            self.pidControllers[message.arm_motor_number].setSoftLimitHigh(message.value)
+            self.pidControllers[message.armMotorNumber].setSoftLimitHigh(message.value)
         elif (message.command == "sL"):
-            self.pidControllers[message.arm_motor_number].setSoftLimitLow(message.value)
+            self.pidControllers[message.armMotorNumber].setSoftLimitLow(message.value)
 
         elif(message.command == "gc"):
             self.gravityCompNewtonMetersToVoltage = message.value
 
         elif(message.command == "v"):
-            voltages = [0.0] * 6
-            voltages[message.arm_motor_number] = message.value
-
-            voltages_msg = SixFloats()
-            voltages_msg.m0 = voltages[0]
-            voltages_msg.m1 = voltages[1]
-            voltages_msg.m2 = voltages[2]
-            voltages_msg.m3 = voltages[3]
-            voltages_msg.m4 = voltages[4]
-            voltages_msg.m5 = voltages[5]
-
+            voltages = [0] * 6
+            voltages[message.armMotorNumber] = message.value
             # CONVERT VOLTAGE LIST TO 6 RAD VALUE ROS MSG
-            self.cmd_setVoltage_callback(voltages_msg)
+            self.cmd_setVoltage_callback(voltages)
 
         elif(message.command == "rad"):
             self.setpointMotorAngles = self.HOME_SETPOINT_MOTORANGLES_RAD
 
-            lowLimit, highLimit = self.pidControllers[message.arm_motor_number].getSoftLimits()
+            lowLimit, highLimit = self.pidControllers[message.armMotorNumber].getSoftLimits()
             angle = self.clampValue(message.value, lowLimit, highLimit)
 
-            self.setpointMotorAngles[message.arm_motor_number] = angle
+            self.setpointMotorAngles[message.armMotorNumber] = angle
 
     # This will stop the motors until the topic receives a new value
     def stopMotor(self, address):
         try:
             self.roboclaw.DutyM1M2(address, 0, 0)
         except OSError as e:
-            self.get_logger().fatal("OSError WHILE TRYING TO STOP MOTORS\n " +
-                             f"[{address}] stopMotors DutyM1M2 OSError: {e.errno}")
+            self.get_logger().severe("ArmNode: OSError WHILE TRYING TO STOP MOTORS")
+            self.get_logger().severe("ArmNode: " + f"[{address}] stopMotors DutyM1M2 OSError: {e.errno}")
             self.get_logger().debug(e)
 
     # Stops all motors until the topic receives a new value
@@ -586,12 +519,18 @@ def main(args=None):
 if __name__ == "__main__":
     main()
 
-# EDGECASE: A setpoint at [0,0,0,0,0,0] causes the kinematics math to fail 
+
 
 """
 
+1. Figure out Heartbeat monitor or remove it
+2. Launch file (PARAMETERS)
+3. Stop motors when the error codes caught are bad
+5. Change the timer's interval to something better and with a declare parameter
 
-Make another node to run on my laptop and remote control the arm. (mainly to use LiveTune)
+6. Make another node to run on my laptop and remote control the arm. (mainly to use LiveTune)
+
+
 
 Many issues by try catches not creating varaibles that are then used
 Check here for isinstance https://github.com/CPRT/h10_rover/blob/main/roboclaw_driver/roboclaw_driver/roboclaw_driver.py

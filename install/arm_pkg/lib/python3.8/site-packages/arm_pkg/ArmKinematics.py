@@ -19,9 +19,6 @@ def calculate_joint_state(pose: Point):
 
     # Identify elevation angle of lower arm
     vector_length = math.hypot(pose.x, pose.y, pose.z)  # length of pose vector
-    if (vector_length == 0): 
-        vector_length = 0.000001
-
     shoulder_angle_pt1 = math.acos((ARM_UPPER_LENGTH**2 - vector_length**2 -
                                    ARM_BASE_LENGTH**2)/(-2.0 * ARM_BASE_LENGTH * vector_length))  # cosine law
     shoulder_angle_pt2 = math.atan2(pose.z, math.sqrt(pose.x**2+pose.y**2))
@@ -61,9 +58,9 @@ def calculate_joint_state(pose: Point):
 
 # Second attempt at programming the end effect angles
 def calculateEndEffectorAngles2(pose: Pose, bottomAngles: "list[3]") -> "list[3]":
-    pitch = pose.orientation.x
-    yaw = pose.orientation.y
-    roll = pose.orientation.z
+    pitch = pose.quaternion.x
+    yaw = pose.quaternion.y
+    roll = pose.quaternion.z
 
     turret = bottomAngles[0]
     shoulder = bottomAngles[1]
@@ -76,10 +73,8 @@ def calculateEndEffectorAngles2(pose: Pose, bottomAngles: "list[3]") -> "list[3]
     # Create vector to point where end effect should point
     pitchYawVector = vectorFromAngles(yaw, pitch, 1)
 
-    if (pitchYawVector [2] == 0):
-        pitchYawVector [2] = 0.000001
     # Project onto Y-Z plane and calculate the angle for the tube to twist
-    tubeTwistAngle = math.atan2(pitchYawVector[1], pitchYawVector [2])
+    tubeTwistAngle = math.atan2(pitchYawVector[1] / pitchYawVector [2])
 
     # Cosine direction vector the X axis. theta = acos(x/length) but length = 1
     wrist = math.acos(pitchYawVector[0])
@@ -125,9 +120,9 @@ def inverseKinematics(pose:Pose):
 ###
 
 def calculateEndEffectorAngles(pose: Pose, bottomAngles):
-    pitch = pose.orientation.x
-    yaw = pose.orientation.y
-    roll = pose.orientation.z
+    pitch = pose.quaternion.x
+    yaw = pose.quaternion.y
+    roll = pose.quaternion.z
 
     turret = bottomAngles[0]
     shoulder = bottomAngles[1]
