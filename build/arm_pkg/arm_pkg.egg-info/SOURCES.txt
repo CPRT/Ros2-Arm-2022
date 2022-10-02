@@ -13,6 +13,8 @@ arm_pkg/GravityCompensation.py
 arm_pkg/PidController.py
 arm_pkg/__init__.py
 arm_pkg/arm_node.py
+arm_pkg/arm_testing_driverstation.py
+arm_pkg/arm_testing_listener.py
 arm_pkg/roboclaw_driver.py
 launch/arm.launch.py
 resource/arm_pkg

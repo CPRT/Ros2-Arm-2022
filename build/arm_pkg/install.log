@@ -4,12 +4,16 @@
 /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/PidController.py
 /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/__init__.py
 /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/arm_node.py
+/home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/arm_testing_listener.py
+/home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/arm_testing_driverstation.py
 /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/__pycache__/GravityCompensation.cpython-38.pyc
 /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/__pycache__/ArmKinematics.cpython-38.pyc
 /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/__pycache__/roboclaw_driver.cpython-38.pyc
 /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/__pycache__/PidController.cpython-38.pyc
 /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/__pycache__/__init__.cpython-38.pyc
 /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/__pycache__/arm_node.cpython-38.pyc
+/home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/__pycache__/arm_testing_listener.cpython-38.pyc
+/home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg/__pycache__/arm_testing_driverstation.cpython-38.pyc
 /home/erik/armnode_ws/install/arm_pkg/share/ament_index/resource_index/packages/arm_pkg
 /home/erik/armnode_ws/install/arm_pkg/share/arm_pkg/package.xml
 /home/erik/armnode_ws/install/arm_pkg/share/arm_pkg/launch/arm.launch.py
@@ -21,3 +25,5 @@
 /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg-0.0.0-py3.8.egg-info/SOURCES.txt
 /home/erik/armnode_ws/install/arm_pkg/lib/python3.8/site-packages/arm_pkg-0.0.0-py3.8.egg-info/top_level.txt
 /home/erik/armnode_ws/install/arm_pkg/lib/arm_pkg/arm_node
+/home/erik/armnode_ws/install/arm_pkg/lib/arm_pkg/arm_testing_driverstation
+/home/erik/armnode_ws/install/arm_pkg/lib/arm_pkg/arm_testing_listener

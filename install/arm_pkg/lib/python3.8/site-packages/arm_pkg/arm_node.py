@@ -159,14 +159,14 @@ class ArmNode(Node):
 
         # Setup publishers
         self.angles_publisher = self.create_publisher(
-            SixFloats, "armAngles", 10)
+            SixFloats, "arm_angles", 10)
 
         self.encoder_raw_publisher = self.create_publisher(
-            SixFloats, "armEncodersRaw", 10)
+            SixFloats, "arm_encoder_raw", 10)
 
         # TODO: This needs forward kinematics equations but that's lower priority
         # self.pose_publisher = self.create_publisher(
-        #     PUTMSGHERE, "armPose", 10)
+        #     PUTMSGHERE, "arm_pose", 10)
 
         # Setup timers
         # self.mainLoopTimer = self.create_timer(
