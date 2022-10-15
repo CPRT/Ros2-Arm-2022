@@ -5,13 +5,14 @@
 #ifndef ARM_INTERFACES__MSG__DETAIL__LIVE_TUNE__STRUCT_HPP_
 #define ARM_INTERFACES__MSG__DETAIL__LIVE_TUNE__STRUCT_HPP_
 
-#include <rosidl_runtime_cpp/bounded_vector.hpp>
-#include <rosidl_runtime_cpp/message_initialization.hpp>
 #include <algorithm>
 #include <array>
 #include <memory>
 #include <string>
 #include <vector>
+
+#include "rosidl_runtime_cpp/bounded_vector.hpp"
+#include "rosidl_runtime_cpp/message_initialization.hpp"
 
 
 #ifndef _WIN32
@@ -60,7 +61,7 @@ struct LiveTune_
     int8_t;
   _arm_motor_number_type arm_motor_number;
   using _command_type =
-    std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other>;
+    std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
   _command_type command;
   using _value_type =
     float;
@@ -74,7 +75,7 @@ struct LiveTune_
     return *this;
   }
   Type & set__command(
-    const std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other> & _arg)
+    const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
   {
     this->command = _arg;
     return *this;

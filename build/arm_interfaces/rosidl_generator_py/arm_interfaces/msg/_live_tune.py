@@ -5,6 +5,8 @@
 
 # Import statements for member types
 
+import builtins  # noqa: E402, I100
+
 import rosidl_parser.definition  # noqa: E402, I100
 
 
@@ -120,7 +122,7 @@ class LiveTune(metaclass=Metaclass_LiveTune):
         from copy import copy
         return copy(cls._fields_and_field_types)
 
-    @property
+    @builtins.property
     def arm_motor_number(self):
         """Message field 'arm_motor_number'."""
         return self._arm_motor_number
@@ -135,7 +137,7 @@ class LiveTune(metaclass=Metaclass_LiveTune):
                 "The 'arm_motor_number' field must be an integer in [-128, 127]"
         self._arm_motor_number = value
 
-    @property
+    @builtins.property
     def command(self):
         """Message field 'command'."""
         return self._command
@@ -148,7 +150,7 @@ class LiveTune(metaclass=Metaclass_LiveTune):
                 "The 'command' field must be of type 'str'"
         self._command = value
 
-    @property
+    @builtins.property
     def value(self):
         """Message field 'value'."""
         return self._value
@@ -159,4 +161,6 @@ class LiveTune(metaclass=Metaclass_LiveTune):
             assert \
                 isinstance(value, float), \
                 "The 'value' field must be of type 'float'"
+            assert value >= -3.402823e+38 and value <= 3.402823e+38, \
+                "The 'value' field must be a float in [-3.402823e+38, 3.402823e+38]"
         self._value = value

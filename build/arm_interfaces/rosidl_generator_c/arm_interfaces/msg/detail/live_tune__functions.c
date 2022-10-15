@@ -232,22 +232,27 @@ arm_interfaces__msg__LiveTune__Sequence__copy(
   if (output->capacity < input->size) {
     const size_t allocation_size =
       input->size * sizeof(arm_interfaces__msg__LiveTune);
+    rcutils_allocator_t allocator = rcutils_get_default_allocator();
     arm_interfaces__msg__LiveTune * data =
-      (arm_interfaces__msg__LiveTune *)realloc(output->data, allocation_size);
+      (arm_interfaces__msg__LiveTune *)allocator.reallocate(
+      output->data, allocation_size, allocator.state);
     if (!data) {
       return false;
     }
+    // If reallocation succeeded, memory may or may not have been moved
+    // to fulfill the allocation request, invalidating output->data.
+    output->data = data;
     for (size_t i = output->capacity; i < input->size; ++i) {
-      if (!arm_interfaces__msg__LiveTune__init(&data[i])) {
-        /* free currently allocated and return false */
+      if (!arm_interfaces__msg__LiveTune__init(&output->data[i])) {
+        // If initialization of any new item fails, roll back
+        // all previously initialized items. Existing items
+        // in output are to be left unmodified.
         for (; i-- > output->capacity; ) {
-          arm_interfaces__msg__LiveTune__fini(&data[i]);
+          arm_interfaces__msg__LiveTune__fini(&output->data[i]);
         }
-        free(data);
         return false;
       }
     }
-    output->data = data;
     output->capacity = input->size;
   }
   output->size = input->size;

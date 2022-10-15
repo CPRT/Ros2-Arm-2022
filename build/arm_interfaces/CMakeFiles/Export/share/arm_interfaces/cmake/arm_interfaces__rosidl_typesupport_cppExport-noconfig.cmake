@@ -8,6 +8,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 # Import target "arm_interfaces::arm_interfaces__rosidl_typesupport_cpp" for configuration ""
 set_property(TARGET arm_interfaces::arm_interfaces__rosidl_typesupport_cpp APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(arm_interfaces::arm_interfaces__rosidl_typesupport_cpp PROPERTIES
+  IMPORTED_LINK_DEPENDENT_LIBRARIES_NOCONFIG "rosidl_runtime_c::rosidl_runtime_c;rosidl_typesupport_cpp::rosidl_typesupport_cpp;rosidl_typesupport_c::rosidl_typesupport_c"
   IMPORTED_LOCATION_NOCONFIG "${_IMPORT_PREFIX}/lib/libarm_interfaces__rosidl_typesupport_cpp.so"
   IMPORTED_SONAME_NOCONFIG "libarm_interfaces__rosidl_typesupport_cpp.so"
   )

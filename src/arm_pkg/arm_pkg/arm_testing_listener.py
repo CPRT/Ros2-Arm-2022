@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 
-from example_interfaces.msg import Int8, Float32
+from std_msgs.msg import Int8, Float32
 from geometry_msgs.msg import Pose
 
 from arm_interfaces.msg import LiveTune

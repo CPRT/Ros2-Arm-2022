@@ -15,7 +15,7 @@ from .PidController import PidController
 from .ArmKinematics import inverseKinematics
 from .GravityCompensation import gravityCompensation
 
-from example_interfaces.msg import Int8, Float32
+from std_msgs.msg import Int8, Float32
 
 class ArmNode(Node):
     def __init__(self):
@@ -56,7 +56,7 @@ class ArmNode(Node):
         self.loopCalculatePID = False
         self.isHoming = False
         self.enableVoltageMode = False
-        self.HOME_SETPOINT_MOTORANGLES_RAD = self.declare_parameter("home_rad").value
+        self.HOME_SETPOINT_MOTORANGLES_RAD = self.declare_parameter("home_rad", [0.0,0.0,0.0,0.0,0.0,0.0]).value
         
         self.setpointMotorAngles = self.HOME_SETPOINT_MOTORANGLES_RAD
         self.REACHED_SETPOINT_TOLERANCE_RAD = 0.05236
@@ -64,12 +64,12 @@ class ArmNode(Node):
 
         # Tunable constants of PID
         invert_motor = self.declare_parameter("invert_motor", [False, False, False, False, False, False]).value
-        pid_kP = self.declare_parameter("pid_kP", [0,0,0,0,0,0]).value
-        pid_kI = self.declare_parameter("pid_kI", [0,0,0,0,0,0]).value
-        pid_kD = self.declare_parameter("pid_kD", [0,0,0,0,0,0]).value
-        pid_kF = self.declare_parameter("pid_kF", [0,0,0,0,0,0]).value
-        pid_kIZone = self.declare_parameter("pid_kIZone", [0,0,0,0,0,0]).value
-        max_output = self.declare_parameter("max_output", [0,0,0,0,0,0]).value
+        pid_kP = self.declare_parameter("pid_kP", [0.0,0.0,0.0,0.0,0.0,0.0]).value
+        pid_kI = self.declare_parameter("pid_kI", [0.0,0.0,0.0,0.0,0.0,0.0]).value
+        pid_kD = self.declare_parameter("pid_kD", [0.0,0.0,0.0,0.0,0.0,0.0]).value
+        pid_kF = self.declare_parameter("pid_kF", [0.0,0.0,0.0,0.0,0.0,0.0]).value
+        pid_kIZone = self.declare_parameter("pid_kIZone", [0.0,0.0,0.0,0.0,0.0,0.0]).value
+        max_output = self.declare_parameter("max_output", [0.0,0.0,0.0,0.0,0.0,0.0]).value
 
         self.get_logger().info("kP: " + str(pid_kP))
 
@@ -77,17 +77,18 @@ class ArmNode(Node):
         for i in range(0,5+1):
             self.pidControllers.append(PidController(invert_motor[i], pid_kP[i], pid_kI[i], pid_kD[i], pid_kF[i], pid_kIZone[i], max_output[i]))     
 
-        softLimitLow = self.declare_parameter("soft_limit_low", [0,0,0,0,0,0]).value
-        softLimitHigh = self.declare_parameter("soft_limit_high", [0,0,0,0,0,0]).value
+        softLimitLow = self.declare_parameter("soft_limit_low", [0.0,0.0,0.0,0.0,0.0,0.0]).value
+        softLimitHigh = self.declare_parameter("soft_limit_high", [0.0,0.0,0.0,0.0,0.0,0.0]).value
 
         for i in range(0,5+1):
             self.pidControllers[i].setSoftLimits(softLimitLow[i], softLimitHigh[i])
 
         self.gearReduction = self.declare_parameter("gear_reduction", [1,1,1,1,1,1]).value
 
-        self.encoderTicksPerRotation = self.declare_parameter("encoder_ticks", [0,0,0,0,0,0]).value
+        self.encoderTicksPerRotation = self.declare_parameter("encoder_ticks", [0.0,0.0,0.0,0.0,0.0,0.0]).value
+        self.get_logger().info("Ticks per rotation: " + str(self.encoderTicksPerRotation))
 
-        self.encoderOffset = self.declare_parameter("encoder_offset", [0,0,0,0,0,0]).value
+        self.encoderOffset = self.declare_parameter("encoder_offset", [0.0,0.0,0.0,0.0,0.0,0.0]).value
 
         # Invert encoder direction (multiply by 1 or -1) based on boolean
         self.invertEncoderDirection = self.declare_parameter("invert_encoder", [False, False, False, False, False, False]).value
@@ -107,7 +108,7 @@ class ArmNode(Node):
         self.get_logger().info("Connecting to roboclaws")
 
         dev_name = self.declare_parameter("~dev", "/dev/ttyACM0").value
-        baud_rate = int(self.declare_parameter("~baud", "19200").value)
+        baud_rate = self.declare_parameter("~baud", 19200).value
 
         self.addresses = self.declare_parameter("~addresses", [131,132,133]).value
 
@@ -171,8 +172,8 @@ class ArmNode(Node):
         #     PUTMSGHERE, "arm_pose", 10)
 
         # Setup timers
-        # self.mainLoopTimer = self.create_timer(
-        #     self.declare_parameter("loop_execute_interval", 0.02).value, self.runMainLoop)
+        self.mainLoopTimer = self.create_timer(
+            self.declare_parameter("loop_execute_interval", 0.02).value, self.runMainLoop)
 
        
         # self.create_rate(1).sleep()  # This sleep thing caused problems
@@ -277,11 +278,13 @@ class ArmNode(Node):
             errorCode = 0x000000
             try:
                 errorCode = self.roboclaw.ReadError(address)[1]
+                state, message = self.ERRORS[errorCode]
+                self.get_logger().info(f"State {state}, Message: {message}")
             except OSError as e:
                 self.get_logger().warn("" + f"[{address}] roboclaw.ReadError OSError: {e.errno}")
                 self.get_logger().debug("" + str(e))
 
-            state, message = self.ERRORS[errorCode]
+
             # statusMessage.summary(state, f"[{address}] {message}")
 
             # Store info about the voltage input to the roboclaw and board temperature 1 and 2
@@ -289,10 +292,10 @@ class ArmNode(Node):
                 # MainBatteryVoltage/10 to get volts
                 mainBatteryVoltage = float(self.roboclaw.ReadMainBatteryVoltage(address)[1] / 10) # EDGECASE: mainBatteryVoltage None
 
-                statusMessage.add("Main Batt V:", mainBatteryVoltage)
-                statusMessage.add("Logic Batt V:", float(self.roboclaw.ReadLogicBatteryVoltage(address)[1] / 10))
-                statusMessage.add("Temp1 C:", float(self.roboclaw.ReadTemp(address)[1] / 10))
-                statusMessage.add("Temp2 C:", float(self.roboclaw.ReadTemp2(address)[1] / 10))
+                # statusMessage.add("Main Batt V:", mainBatteryVoltage)
+                # statusMessage.add("Logic Batt V:", float(self.roboclaw.ReadLogicBatteryVoltage(address)[1] / 10))
+                # statusMessage.add("Temp1 C:", float(self.roboclaw.ReadTemp(address)[1] / 10))
+                # statusMessage.add("Temp2 C:", float(self.roboclaw.ReadTemp2(address)[1] / 10))
             except OSError as e:
                 self.get_logger().warn("" + f"[{address}] roboclaw.ReadMainBatteryVoltage OSError: {e.errno}")
                 self.get_logger().debug("" + str(e))
@@ -308,41 +311,40 @@ class ArmNode(Node):
         encoderRadians = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         encoderRaw = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
-        # i = 0
-        # for address in self.addresses:
+        i = 0
+        for address in self.addresses:
+            ##
+            ## Store all encoder positions
+            ##
+            try:
+                encoderCount1 = float(self.roboclaw.ReadEncM1(address)[1]) * self.invertEncoderDirection[i]
+            except OSError as e:
+                self.get_logger().warn("" + f"[{address}] ReadEncM1 OSError: {e.errno}") # EDGECASE: encoderCount1 None
+                self.get_logger().debug("" + str(e))
+                # self.stopMotors() # TODO: Add this back once we have encoders working
+                return # EDGECASE_HANDLED_TEMP
+            
+            try:
+                encoderCount2 = float(self.roboclaw.ReadEncM2(address)[1]) * self.invertEncoderDirection[i+1]
+            except OSError as e:
+                self.get_logger().warn("" + f"[{address}] ReadEncM2 OSError: {e.errno}") # EDGECASE: encoderCount2 None
+                self.get_logger().debug("" + str(e))
+                # self.stopMotors() # TODO: Add this back once we have encoders working
+                return # EDGECASE_HANDLED_TEMP
 
-        ##
-        ## Store all encoder positions
-        ##
-        try:
-            encoderCount1 = float(self.roboclaw.ReadEncM1(address)[1]) * self.invertEncoderDirection[i]
-        except OSError as e:
-            self.get_logger().warn("" + f"[{address}] ReadEncM1 OSError: {e.errno}") # EDGECASE: encoderCount1 None
-            self.get_logger().debug("" + str(e))
-            self.stopMotors
-            return # EDGECASE_HANDLED_TEMP
-        
-        try:
-            encoderCount2 = float(self.roboclaw.ReadEncM2(address)[1]) * self.invertEncoderDirection[i+1]
-        except OSError as e:
-            self.get_logger().warn("" + f"[{address}] ReadEncM2 OSError: {e.errno}") # EDGECASE: encoderCount2 None
-            self.get_logger().debug("" + str(e))
-            self.stopMotors
-            return # EDGECASE_HANDLED_TEMP
+            encoderRadians1 = encoderCount1 / self.encoderTicksPerRotation[i] * 2*pi / self.gearReduction[i]
+            encoderRadians2 = encoderCount2 / self.encoderTicksPerRotation[i+1] * 2*pi / self.gearReduction[i+1]
 
-        encoderRadians1 = encoderCount1 / self.encoderTicksPerRotation[i] * 2*pi / self.gearReduction[i]
-        encoderRadians2 = encoderCount2 / self.encoderTicksPerRotation[i+1] * 2*pi / self.gearReduction[i+1]
+            encoderRadians1 = encoderRadians1 + self.encoderOffset[i]
+            encoderRadians2 = encoderRadians2 + self.encoderOffset[i+1]
 
-        encoderRadians1 = encoderRadians1 + self.encoderOffset[i]
-        encoderRadians2 = encoderRadians2 + self.encoderOffset[i+1]
+            encoderRadians[i] = encoderRadians1
+            encoderRadians[i+1] = encoderRadians2
 
-        encoderRadians[i] = encoderRadians1
-        encoderRadians[i+1] = encoderRadians2
+            encoderRaw[i] = encoderCount1
+            encoderRaw[i+1] = encoderCount2
 
-        encoderRaw[i] = encoderCount1
-        encoderRaw[i+1] = encoderCount2
-
-        i += 2
+            i += 2
         
         encoderRadiansMsg = SixFloats()
         encoderRadiansMsg.m0 = encoderRadians[0]
@@ -382,7 +384,8 @@ class ArmNode(Node):
         ## If we don't want to calcualte PID then make sure the motors don't move
         ##
         if self.loopCalculatePID == False:
-            self.stopMotors()
+            pass
+            # self.stopMotors() # TODO: Add this back once we have encoders working
 
         else:
 
@@ -411,8 +414,8 @@ class ArmNode(Node):
                 voltage2 = self.pidControllers[i+1].calculate(setpoint2, feedback2, gravityCompVolts[i+1])
 
                 # 32767 is 100% duty cycle (15 bytes)
-                dutyCycle1 = voltage1 / mainBatteryVoltage * 32767 #EDGECASE: mainBatteryVoltage is None
-                dutyCycle2 = voltage2 / mainBatteryVoltage * 32767 #EDGECASE: mainBatteryVoltage is None
+                dutyCycle1 = int(voltage1 / mainBatteryVoltage * 32767) #EDGECASE: mainBatteryVoltage is None
+                dutyCycle2 = int(voltage2 / mainBatteryVoltage * 32767) #EDGECASE: mainBatteryVoltage is None
 
                 # Send the command to the roboclaw
                 try:
@@ -445,8 +448,8 @@ class ArmNode(Node):
                 return # EDGECASE_HANDLED_TEMP
 
             # 32767 is 100% duty cycle (15 bytes)
-            dutyCycle1 = voltages[i] / mainBatteryVoltage * 32767
-            dutyCycle2 = voltages[i+1] / mainBatteryVoltage * 32767
+            dutyCycle1 = int(voltages[i] / mainBatteryVoltage * 32767)
+            dutyCycle2 = int(voltages[i+1] / mainBatteryVoltage * 32767)
 
             # Send the command to the roboclaw
             try:
@@ -541,6 +544,7 @@ class ArmNode(Node):
 
     # This will stop the motors until the topic receives a new value
     def stopMotor(self, address):
+        self.get_logger().warn("STOPPING MOTORS")
         try:
             self.roboclaw.DutyM1M2(address, 0, 0)
         except OSError as e:

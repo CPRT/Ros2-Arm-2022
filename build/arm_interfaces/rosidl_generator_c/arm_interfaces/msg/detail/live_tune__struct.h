@@ -21,7 +21,7 @@ extern "C"
 // Member 'command'
 #include "rosidl_runtime_c/string.h"
 
-// Struct defined in msg/LiveTune in the package arm_interfaces.
+/// Struct defined in msg/LiveTune in the package arm_interfaces.
 typedef struct arm_interfaces__msg__LiveTune
 {
   int8_t arm_motor_number;

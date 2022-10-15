@@ -5,10 +5,11 @@
 #ifndef ARM_INTERFACES__MSG__DETAIL__LIVE_TUNE__BUILDER_HPP_
 #define ARM_INTERFACES__MSG__DETAIL__LIVE_TUNE__BUILDER_HPP_
 
-#include "arm_interfaces/msg/detail/live_tune__struct.hpp"
-#include <rosidl_runtime_cpp/message_initialization.hpp>
 #include <algorithm>
 #include <utility>
+
+#include "arm_interfaces/msg/detail/live_tune__struct.hpp"
+#include "rosidl_runtime_cpp/message_initialization.hpp"
 
 
 namespace arm_interfaces

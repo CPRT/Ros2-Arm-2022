@@ -23,7 +23,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             '~dev',
             description='Linux Serial Device',
-            default_value="/dev/ttyACM0"),
+            default_value="/dev/serial0"),
 
         DeclareLaunchArgument(
             '~baud',
@@ -33,7 +33,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             '~addresses',
             description='Roboclaw Serial Addresses',
-            default_value="[131,132,133]"),
+            default_value="[128]"),
 
 
         ## All data needed to construct a PidController object
@@ -108,7 +108,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "encoder_ticks",
             description="list[6] of floats. This is the number of ticks per rotation of each encoder.",
-            default_value="[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
+            default_value="[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]"
         ),
         
         DeclareLaunchArgument(
@@ -141,6 +141,7 @@ def generate_launch_description():
                         "pid_kF": launch.substitutions.LaunchConfiguration("pid_kF"),
                         "pid_kIZone": launch.substitutions.LaunchConfiguration("pid_kIZone"),
                         "max_output": launch.substitutions.LaunchConfiguration("max_output"),
+                        "encoder_ticks": launch.substitutions.LaunchConfiguration("encoder_ticks"),
 
                         "home_rad": launch.substitutions.LaunchConfiguration("home_rad"),
                         "soft_limit_low": launch.substitutions.LaunchConfiguration("soft_limit_low"),

@@ -5,6 +5,8 @@
 
 # Import statements for member types
 
+import builtins  # noqa: E402, I100
+
 import rosidl_parser.definition  # noqa: E402, I100
 
 
@@ -138,7 +140,7 @@ class SixFloats(metaclass=Metaclass_SixFloats):
         from copy import copy
         return copy(cls._fields_and_field_types)
 
-    @property
+    @builtins.property
     def m0(self):
         """Message field 'm0'."""
         return self._m0
@@ -149,9 +151,11 @@ class SixFloats(metaclass=Metaclass_SixFloats):
             assert \
                 isinstance(value, float), \
                 "The 'm0' field must be of type 'float'"
+            assert value >= -3.402823e+38 and value <= 3.402823e+38, \
+                "The 'm0' field must be a float in [-3.402823e+38, 3.402823e+38]"
         self._m0 = value
 
-    @property
+    @builtins.property
     def m1(self):
         """Message field 'm1'."""
         return self._m1
@@ -162,9 +166,11 @@ class SixFloats(metaclass=Metaclass_SixFloats):
             assert \
                 isinstance(value, float), \
                 "The 'm1' field must be of type 'float'"
+            assert value >= -3.402823e+38 and value <= 3.402823e+38, \
+                "The 'm1' field must be a float in [-3.402823e+38, 3.402823e+38]"
         self._m1 = value
 
-    @property
+    @builtins.property
     def m2(self):
         """Message field 'm2'."""
         return self._m2
@@ -175,9 +181,11 @@ class SixFloats(metaclass=Metaclass_SixFloats):
             assert \
                 isinstance(value, float), \
                 "The 'm2' field must be of type 'float'"
+            assert value >= -3.402823e+38 and value <= 3.402823e+38, \
+                "The 'm2' field must be a float in [-3.402823e+38, 3.402823e+38]"
         self._m2 = value
 
-    @property
+    @builtins.property
     def m3(self):
         """Message field 'm3'."""
         return self._m3
@@ -188,9 +196,11 @@ class SixFloats(metaclass=Metaclass_SixFloats):
             assert \
                 isinstance(value, float), \
                 "The 'm3' field must be of type 'float'"
+            assert value >= -3.402823e+38 and value <= 3.402823e+38, \
+                "The 'm3' field must be a float in [-3.402823e+38, 3.402823e+38]"
         self._m3 = value
 
-    @property
+    @builtins.property
     def m4(self):
         """Message field 'm4'."""
         return self._m4
@@ -201,9 +211,11 @@ class SixFloats(metaclass=Metaclass_SixFloats):
             assert \
                 isinstance(value, float), \
                 "The 'm4' field must be of type 'float'"
+            assert value >= -3.402823e+38 and value <= 3.402823e+38, \
+                "The 'm4' field must be a float in [-3.402823e+38, 3.402823e+38]"
         self._m4 = value
 
-    @property
+    @builtins.property
     def m5(self):
         """Message field 'm5'."""
         return self._m5
@@ -214,4 +226,6 @@ class SixFloats(metaclass=Metaclass_SixFloats):
             assert \
                 isinstance(value, float), \
                 "The 'm5' field must be of type 'float'"
+            assert value >= -3.402823e+38 and value <= 3.402823e+38, \
+                "The 'm5' field must be a float in [-3.402823e+38, 3.402823e+38]"
         self._m5 = value

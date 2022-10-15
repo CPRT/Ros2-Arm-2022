@@ -1,21 +1,21 @@
 {
   "package_name": "arm_interfaces",
-  "output_dir": "/home/erik/armnode_ws/build/arm_interfaces/rosidl_typesupport_fastrtps_cpp/arm_interfaces",
-  "template_dir": "/opt/ros/foxy/share/rosidl_typesupport_fastrtps_cpp/resource",
+  "output_dir": "/home/ubuntu/Ros2-Arm-2022/build/arm_interfaces/rosidl_typesupport_fastrtps_cpp/arm_interfaces",
+  "template_dir": "/opt/ros/humble/share/rosidl_typesupport_fastrtps_cpp/resource",
   "idl_tuples": [
-    "/home/erik/armnode_ws/build/arm_interfaces/rosidl_adapter/arm_interfaces:msg/SixFloats.idl",
-    "/home/erik/armnode_ws/build/arm_interfaces/rosidl_adapter/arm_interfaces:msg/LiveTune.idl"
+    "/home/ubuntu/Ros2-Arm-2022/build/arm_interfaces/rosidl_adapter/arm_interfaces:msg/SixFloats.idl",
+    "/home/ubuntu/Ros2-Arm-2022/build/arm_interfaces/rosidl_adapter/arm_interfaces:msg/LiveTune.idl"
   ],
   "target_dependencies": [
-    "/opt/ros/foxy/lib/rosidl_typesupport_fastrtps_cpp/rosidl_typesupport_fastrtps_cpp",
-    "/opt/ros/foxy/lib/python3.8/site-packages/rosidl_typesupport_fastrtps_cpp/__init__.py",
-    "/opt/ros/foxy/share/rosidl_typesupport_fastrtps_cpp/resource/idl__rosidl_typesupport_fastrtps_cpp.hpp.em",
-    "/opt/ros/foxy/share/rosidl_typesupport_fastrtps_cpp/resource/idl__type_support.cpp.em",
-    "/opt/ros/foxy/share/rosidl_typesupport_fastrtps_cpp/resource/msg__rosidl_typesupport_fastrtps_cpp.hpp.em",
-    "/opt/ros/foxy/share/rosidl_typesupport_fastrtps_cpp/resource/msg__type_support.cpp.em",
-    "/opt/ros/foxy/share/rosidl_typesupport_fastrtps_cpp/resource/srv__rosidl_typesupport_fastrtps_cpp.hpp.em",
-    "/opt/ros/foxy/share/rosidl_typesupport_fastrtps_cpp/resource/srv__type_support.cpp.em",
-    "/home/erik/armnode_ws/build/arm_interfaces/rosidl_adapter/arm_interfaces/msg/SixFloats.idl",
-    "/home/erik/armnode_ws/build/arm_interfaces/rosidl_adapter/arm_interfaces/msg/LiveTune.idl"
+    "/opt/ros/humble/lib/rosidl_typesupport_fastrtps_cpp/rosidl_typesupport_fastrtps_cpp",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_typesupport_fastrtps_cpp/__init__.py",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_cpp/resource/idl__rosidl_typesupport_fastrtps_cpp.hpp.em",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_cpp/resource/idl__type_support.cpp.em",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_cpp/resource/msg__rosidl_typesupport_fastrtps_cpp.hpp.em",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_cpp/resource/msg__type_support.cpp.em",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_cpp/resource/srv__rosidl_typesupport_fastrtps_cpp.hpp.em",
+    "/opt/ros/humble/share/rosidl_typesupport_fastrtps_cpp/resource/srv__type_support.cpp.em",
+    "/home/ubuntu/Ros2-Arm-2022/build/arm_interfaces/rosidl_adapter/arm_interfaces/msg/SixFloats.idl",
+    "/home/ubuntu/Ros2-Arm-2022/build/arm_interfaces/rosidl_adapter/arm_interfaces/msg/LiveTune.idl"
   ]
 }

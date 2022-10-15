@@ -17,7 +17,7 @@ extern "C"
 
 // Constants defined in the message
 
-// Struct defined in msg/SixFloats in the package arm_interfaces.
+/// Struct defined in msg/SixFloats in the package arm_interfaces.
 typedef struct arm_interfaces__msg__SixFloats
 {
   float m0;
