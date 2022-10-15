@@ -15,7 +15,7 @@ from .PidController import PidController
 from .ArmKinematics import inverseKinematics
 from .GravityCompensation import gravityCompensation
 
-from example_interfaces.msg import Int8, Float32
+from std_msgs.msg import Int8, Float32
 
 class ArmNode(Node):
     def __init__(self):
@@ -70,6 +70,8 @@ class ArmNode(Node):
         pid_kF = self.declare_parameter("pid_kF", [0,0,0,0,0,0]).value
         pid_kIZone = self.declare_parameter("pid_kIZone", [0,0,0,0,0,0]).value
         max_output = self.declare_parameter("max_output", [0,0,0,0,0,0]).value
+
+        self.get_logger().info("kP: " + str(pid_kP))
 
         self.pidControllers = []
         for i in range(0,5+1):
@@ -169,8 +171,8 @@ class ArmNode(Node):
         #     PUTMSGHERE, "arm_pose", 10)
 
         # Setup timers
-        # self.mainLoopTimer = self.create_timer(
-        #     self.declare_parameter("loop_execute_interval", 0.02).value, self.runMainLoop)
+        self.mainLoopTimer = self.create_timer(
+            self.declare_parameter("loop_execute_interval", 0.02).value, self.runMainLoop)
 
        
         # self.create_rate(1).sleep()  # This sleep thing caused problems

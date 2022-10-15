@@ -49,7 +49,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "pid_kP",
             description="list[6] of floats. Represents the P constant of the PidController.",
-            default_value= "[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
+            default_value= "[0.0, 0.0, 1.0, 0.0, 0.0, 0.0]"
         ),
 
         DeclareLaunchArgument(

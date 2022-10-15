@@ -2,9 +2,6 @@ import launch
 
 from launch_ros.actions import Node
 from launch.actions import DeclareLaunchArgument
-from launch.substitutions import TextSubstitution
-
-from arm_pkg.PidController import PidController
 
 def generate_launch_description():
 
@@ -49,7 +46,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "pid_kP",
             description="list[6] of floats. Represents the P constant of the PidController.",
-            default_value= "[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
+            default_value= "[0.0, 0.0, 1.0, 0.0, 0.0, 0.0]"
         ),
 
         DeclareLaunchArgument(

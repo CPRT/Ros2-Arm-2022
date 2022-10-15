@@ -71,6 +71,8 @@ class ArmNode(Node):
         pid_kIZone = self.declare_parameter("pid_kIZone", [0,0,0,0,0,0]).value
         max_output = self.declare_parameter("max_output", [0,0,0,0,0,0]).value
 
+        self.get_logger().info("kP: " + str(pid_kP))
+
         self.pidControllers = []
         for i in range(0,5+1):
             self.pidControllers.append(PidController(invert_motor[i], pid_kP[i], pid_kI[i], pid_kD[i], pid_kF[i], pid_kIZone[i], max_output[i]))     
