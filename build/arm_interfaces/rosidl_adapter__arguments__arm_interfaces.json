@@ -1,7 +1,0 @@
-{
-  "package_name": "arm_interfaces",
-  "non_idl_tuples": [
-    "/home/ubuntu/Ros2-Arm-2022/src/arm_interfaces:msg/SixFloats.msg",
-    "/home/ubuntu/Ros2-Arm-2022/src/arm_interfaces:msg/LiveTune.msg"
-  ]
-}
