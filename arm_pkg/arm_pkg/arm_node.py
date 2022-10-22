@@ -83,6 +83,8 @@ class ArmNode(Node):
         for i in range(0,5+1):
             self.pidControllers[i].setSoftLimits(softLimitLow[i], softLimitHigh[i])
 
+            self.pidControllers[i].enableSoftLimit(False)
+
         self.gearReduction = self.declare_parameter("gear_reduction", [1,1,1,1,1,1]).value
 
         self.encoderTicksPerRotation = self.declare_parameter("encoder_ticks", [0.0,0.0,0.0,0.0,0.0,0.0]).value

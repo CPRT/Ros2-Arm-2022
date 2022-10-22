@@ -1,5 +1,10 @@
 build/*
 install/*
 log/*
+arm_interfaces/build/*
+arm_interfaces/install/*
+arm_interfaces/log/*
+arm_pkg/build/*
+arm_pkg/install/*
+arm_pkg/log/*
 .vscode
-    
