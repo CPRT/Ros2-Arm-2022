@@ -21,6 +21,7 @@ class ArmTestingListener(Node):
         # Setup fields
         self.angles = SixFloats()
         self.encoderRaw = SixFloats()
+        self.setpoints = SixFloats()
 
         self.loopInterval = 0.01
         self.timeSinceStartup = 0
@@ -29,7 +30,7 @@ class ArmTestingListener(Node):
         self.startTime = time.time()
 
         csvFilePath = "/home/erik/Downloads/ArmNodeTesting-LoggingFiles_FAll2022/"
-        csvFilename = "Logging_" + datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
+        csvFilename = "Logging_" + datetime.now().strftime("%d-%m-%Y_%H:%M:%S") + ".csv"
 
         try:
             self.csvFile = open(csvFilePath + csvFilename, 'w')
@@ -55,6 +56,12 @@ class ArmTestingListener(Node):
         self.encoder_raw = self.create_subscription(
             SixFloats, "arm_encoder_raw", self.armEncoderRaw_callback, 10)
 
+        self.setpoint_sub = self.create_subscription(
+            SixFloats, "cmd_arm", self.cmdArm_callback, 10)
+
+        self.livetune_sub = self.create_subscription(
+            LiveTune, "arm_liveTune", self.liveTune_callback, 10)
+
         self.create_timer(self.loopInterval, self.loopRun)
 
 
@@ -65,6 +72,25 @@ class ArmTestingListener(Node):
     def armEncoderRaw_callback(self, msg: SixFloats):
         self.encoderRaw = msg
         self.timeSinceNewData = 0
+
+    def cmdArm_callback(self, msg: SixFloats):
+        self.setpoints = msg
+
+    def liveTune_callback(self, msg: LiveTune):
+
+        if (msg.command.lower() == "rad"):
+            values = [0.0]*6
+            values[msg.arm_motor_number] = msg.value
+
+            newMsg = SixFloats()
+            newMsg.m0 = values[0]
+            newMsg.m1 = values[1]
+            newMsg.m2 = values[2]
+            newMsg.m3 = values[3]
+            newMsg.m4 = values[4]
+            newMsg.m5 = values[5]
+
+            self.cmdArm_callback(newMsg)
 
     def loopRun(self):
         measuredTime = time.time() - self.startTime
@@ -102,7 +128,15 @@ class ArmTestingListener(Node):
 
         csvRow = [  measuredTime,
                     " ",
-                    "RAD",
+                    "SETPOINT RAD",
+                    self.setpoints.m0,
+                    self.setpoints.m1,
+                    self.setpoints.m2,
+                    self.setpoints.m3,
+                    self.setpoints.m4,
+                    self.setpoints.m5,
+                    " ",
+                    "ENCODER RAD",
                     self.angles.m0,
                     self.angles.m1,
                     self.angles.m2,
@@ -110,7 +144,7 @@ class ArmTestingListener(Node):
                     self.angles.m4,
                     self.angles.m5,
                     " ",
-                    "RAW",
+                    "ENCODER RAW",
                     self.encoderRaw.m0,
                     self.encoderRaw.m1,
                     self.encoderRaw.m2,

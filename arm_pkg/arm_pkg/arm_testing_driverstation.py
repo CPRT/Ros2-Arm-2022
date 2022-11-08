@@ -19,7 +19,7 @@ class ArmTestingDriverstation(Node):
         self.prevCommandStr = ""
         self.repeatCommandStr = 0
 
-        self.STOP_COMMANDS = ["s","q", "e", ""]
+        self.STOP_COMMANDS = ["q", "e", ""]
         self.LIVE_TUNE_COMMANDS = ["p", "i", "d", "iZ", "mI", "eI", "eO", "eT", "sH", "sL", "gc", "v", "rad", "deg"]
         self.SIX_FLOATS_COMMANDS = ["cmd", "volt", "v"]
         
