@@ -20,7 +20,7 @@ class ArmTestingDriverstation(Node):
         self.repeatCommandStr = 0
 
         self.STOP_COMMANDS = ["q", "e", ""]
-        self.LIVE_TUNE_COMMANDS = ["p", "i", "d", "iZ", "mI", "eI", "eO", "eT", "sH", "sL", "gc", "v", "rad", "deg"]
+        self.LIVE_TUNE_COMMANDS = ["p", "i", "d", "iz", "mi", "ei", "eO", "et", "sh", "sl", "gc", "v", "rad", "deg"]
         self.SIX_FLOATS_COMMANDS = ["cmd", "volt", "v"]
         
 
@@ -209,7 +209,7 @@ class ArmTestingDriverstation(Node):
             # Not a LiveTune Command
             self.commandStr = "failed -> invalid input\n"
             return
-
+        print(u[1])
         if (not u[1] in self.LIVE_TUNE_COMMANDS):
             self.commandStr = "failed -> invalid command\n"
             return

@@ -46,7 +46,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "pid_kP",
             description="list[6] of floats. Represents the P constant of the PidController.",
-            default_value= "[0.0, 0.0, 1.0, 0.0, 0.0, 0.0]"
+            default_value= "[0.06, 0.0, 0.0, 0.0, 0.0, 0.0]"
         ),
 
         DeclareLaunchArgument(
@@ -76,7 +76,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "max_output",
             description="list[6] of floats. Represents the max output of the motors, usually in volts.",
-            default_value= "[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
+            default_value= "[8.0, 1.0, 1.0, 1.0, 1.0, 1.0]"
         ),
 
 
@@ -96,7 +96,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "soft_limit_high",
             description="list[6] of floats. This is angle in radians that the arm will not be allowed to be above.",
-            default_value="[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
+            default_value="[200.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
         ),
 
         DeclareLaunchArgument(
@@ -108,7 +108,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "encoder_ticks",
             description="list[6] of floats. This is the number of ticks per rotation of each encoder.",
-            default_value="[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]"
+            default_value="[200.0, 1.0, 1.0, 1.0, 1.0, 1.0]"
         ),
         
         DeclareLaunchArgument(
@@ -120,7 +120,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "invert_encoder",
             description="list[6] of booleans. True means the encoder is going the wrong direction and should be inverted.",
-            default_value= "[False, False, False, False, False, False]"
+            default_value= "[true, False, False, False, False, False]"
         ),
 
         Node(

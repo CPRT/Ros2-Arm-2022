@@ -98,6 +98,8 @@ class ArmTestingListener(Node):
 
         display = ( "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+                    f"Setpoint: {self.setpoints.m0}"
+                    ""
                     "Encoder values in radians: \n"
                     f"m0: {self.angles.m0:.5f} \n"
                     f"m1: {self.angles.m1:.5f} \n"

@@ -69,9 +69,8 @@ class ArmNode(Node):
         pid_kD = self.declare_parameter("pid_kD", [0.0,0.0,0.0,0.0,0.0,0.0]).value
         pid_kF = self.declare_parameter("pid_kF", [0.0,0.0,0.0,0.0,0.0,0.0]).value
         pid_kIZone = self.declare_parameter("pid_kIZone", [0.0,0.0,0.0,0.0,0.0,0.0]).value
-        max_output = self.declare_parameter("max_output", [0.0,0.0,0.0,0.0,0.0,0.0]).value
+        max_output = self.declare_parameter("max_output", [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]).value
 
-        self.get_logger().info("kP: " + str(pid_kP))
 
         self.pidControllers = []
         for i in range(0,5+1):
@@ -93,13 +92,15 @@ class ArmNode(Node):
         self.encoderOffset = self.declare_parameter("encoder_offset", [0.0,0.0,0.0,0.0,0.0,0.0]).value
 
         # Invert encoder direction (multiply by 1 or -1) based on boolean
-        self.invertEncoderDirection = self.declare_parameter("invert_encoder", [False, False, False, False, False, False]).value
+        encoderDirections = self.declare_parameter("invert_encoder", [False, False, False, False, False, False]).value
+        self.invertEncoderDirection = [1] * 6
+
+        j = 0
         for direction in self.invertEncoderDirection:
             # If invertDirection is true then multiply by -1
-            if (direction):
-                direction = -1
-            else:
-                direction = 1
+            if (encoderDirections[j]):
+                self.invertEncoderDirection[j] = -1
+
 
 
         # Effects the influence of gravity comp on the arms, it's live tunable
@@ -138,14 +139,14 @@ class ArmNode(Node):
                 versions.append(self.roboclaw.ReadVersion(address))
             except Exception as e:
                 self.get_logger().warn("Problem getting roboclaw version for " + f"[{address}]")
-                self.get_logger().debug(e)
+                self.get_logger().warn(e)
                 pass
 
         for version in versions:
             if not version[0]:
                 self.get_logger().warn("Problem getting roboclaw version for " + f"[{address}]")
             else:
-                self.get_logger().debug("ArmCode: " + repr(version[1]))
+                self.get_logger().warn("ArmCode: " + repr(version[1]))
 
 
 
@@ -231,6 +232,7 @@ class ArmNode(Node):
     # state == 2 -> Enable
     # state == 3 -> Enable Voltage Control Only (disable kinematics+PID)
     def arm_state_callback(self, state: Int8):
+        self.get_logger().info("ArmNode: state change to " + str(state.data))
         if (state.data == 0):
             self.stopMotors()
             self.loopCalculatePID = False
@@ -270,6 +272,7 @@ class ArmNode(Node):
         self.timeSinceCommandRecieved = 0 # TODO: Deal with the heartbeat monitor
 
     def runMainLoop(self):
+        mainBatteryVoltage = 0.0001
         ##
         ## Check vitals. A basic 'motor controller is ok' check
         ##
@@ -281,7 +284,7 @@ class ArmNode(Node):
             try:
                 errorCode = self.roboclaw.ReadError(address)[1]
                 state, message = self.ERRORS[errorCode]
-                self.get_logger().info(f"State {state}, Message: {message}")
+                # self.get_logger().info(f"State {state}, Message: {message}")
             except OSError as e:
                 self.get_logger().warn("" + f"[{address}] roboclaw.ReadError OSError: {e.errno}")
                 self.get_logger().debug("" + str(e))
@@ -378,7 +381,9 @@ class ArmNode(Node):
         ## 
         if (self.isHoming): 
             if (self.reachedSetpoint(self.HOME_SETPOINT_MOTORANGLES_RAD, encoderRadians)):
-                self.arm_state_callback(0)
+                msg = Int8()
+                msg.data = 0
+                self.arm_state_callback(msg)
                 return 
 
         ##
@@ -407,12 +412,12 @@ class ArmNode(Node):
 
                 # Calculate grav comp and PID for motor 1
                 setpoint1 = motorAngles[i]
-                feedback1 = encoderRadians1 #EDGECASE: encoderRadians1 is None
+                feedback1 = encoderRadians[i] #EDGECASE: encoderRadians1 is None
                 voltage1 = self.pidControllers[i].calculate(setpoint1, feedback1, gravityCompVolts[i])
 
                 # Calculate grav comp and PID for motor 2
                 setpoint2 = motorAngles[i+1]
-                feedback2 = encoderRadians2 #EDGECASE: encoderRadians2 is None
+                feedback2 = encoderRadians[i+1] #EDGECASE: encoderRadians2 is None
                 voltage2 = self.pidControllers[i+1].calculate(setpoint2, feedback2, gravityCompVolts[i+1])
 
                 # 32767 is 100% duty cycle (15 bytes)
@@ -495,28 +500,28 @@ class ArmNode(Node):
         if (message.command == "s" or message.command == "e" or message.command == ""):
             self.stopMotors()
 
-        elif (message.command == "p"):
-            self.pidControllers[message.arm_motor_number].setP = message.value
+        elif (message.command == "p".lower()):
+            self.pidControllers[message.arm_motor_number].kP = float(message.value)
         elif (message.command == "i"):
-            self.pidControllers[message.arm_motor_number].setI = message.value
+            self.pidControllers[message.arm_motor_number].kI = float(message.value)
         elif (message.command == "d"):
-            self.pidControllers[message.arm_motor_number].setD = message.value
-        elif (message.command == "iZ"):
-            self.pidControllers[message.arm_motor_number].setIZone = message.value
+            self.pidControllers[message.arm_motor_number].kD = float(message.value)
+        elif (message.command == "iZ".lower()):
+            self.pidControllers[message.arm_motor_number].kIZone = float(message.value)
 
         elif (message.command == "mI"):
-            self.pidControllers[message.arm_motor_number].setInvertOutput = message.value
-        elif(message.command == "eI"):
+            self.pidControllers[message.arm_motor_number].kInvertOutput = message.value
+        elif(message.command == "eI".lower()):
             self.invertEncoderDirection[message.arm_motor_number] = int(message.value)
-        elif(message.command == "eO"):
-            self.encoderOffset[message.arm_motor_number] = message.value
-        elif(message.command == "eT"):
-            self.encoderTicksPerRotation[message.arm_motor_number] = message.value
+        elif(message.command == "eO".lower()):
+            self.encoderOffset[message.arm_motor_number] = float(message.value)
+        elif(message.command == "eT".lower()):
+            self.encoderTicksPerRotation[message.arm_motor_number] = float(message.value)
         
-        elif (message.command == "sH"):
-            self.pidControllers[message.arm_motor_number].setSoftLimitHigh(message.value)
-        elif (message.command == "sL"):
-            self.pidControllers[message.arm_motor_number].setSoftLimitLow(message.value)
+        elif (message.command == "sH".lower()):
+            self.pidControllers[message.arm_motor_number].setSoftLimitHigh(float(message.value))
+        elif (message.command == "sL".lower()):
+            self.pidControllers[message.arm_motor_number].setSoftLimitLow(float(message.value))
 
         elif(message.command == "gc"):
             self.gravityCompNewtonMetersToVoltage = message.value
@@ -544,6 +549,8 @@ class ArmNode(Node):
 
             self.setpointMotorAngles[message.arm_motor_number] = angle
 
+        else:
+            self.get_logger().warn("LiveTune message unknown")
     # This will stop the motors until the topic receives a new value
     def stopMotor(self, address):
         self.get_logger().warn("STOPPING MOTORS")
